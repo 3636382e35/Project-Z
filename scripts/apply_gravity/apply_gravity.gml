@@ -27,30 +27,14 @@ function apply_gravity(_state) {
 		
 		
     } else if (on_ground) {
-        //show_debug_message("onground");
 		vspeed = 0;
 		hspeed = 0;
         state = _state;
-        y = (y div 32) * 32; // Snap to grid (Adjust this based on your needs)
+        y = (y div 32) * 32; // Snap to grid
     }
 
 
 
-
-
-
-        //     for (var i = 0; i < abs(vspeed); i++) {
-        //     if (!place_meeting(x, y + sign(vspeed), obj_wall)) {
-        //         y += sign(vspeed);
-        //     } else {
-        //         while (!place_meeting(x, y + sign(vspeed), obj_wall)) {
-        //             y += sign(vspeed);
-        //         }
-        //         vspeed = 0;
-                
-        //         break;
-        //     }
-        // }
    
 
 

@@ -69,18 +69,16 @@ function activate_global_inputs(){
 
 
 
-	timer -= 1; // Decrement timer by 1 each step
+	timer -= 1;
 
 	if (timer <= 0) {
-	    // Reset comboMeter and consecutiveKills if timer runs out
 	    comboMeter = 0;
 	    consecutiveKills = 0;
-	    timer = timer_max; // Reset timer to 60 seconds (adjust as needed)
+	    timer = timer_max;
 	}
 
 
 	if input.hold_l_key {
-		//show_debug_message("L pressed... charge_pressed: " + string(charge_pressed));
 		
 
 		if not instance_exists(o_charge_sprite) {
