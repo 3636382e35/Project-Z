@@ -63,6 +63,10 @@ hack
 jetbrains mono
 iosevka
 
+THEME: GUNA 
+COLORSCHEME: FLATLAND | FLATGRAMMER
+
+
 
 
 TWITTER PIXEL GODS
