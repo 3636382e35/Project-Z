@@ -28,57 +28,6 @@ jce_dmg = 0;
 
 
 
-//TODO: add mobs! links to the mobs below 
-
-/*
-
-MOBS
-https://penusbmic.itch.io/sci-fi-character-pack-12
-https://penusbmic.itch.io/sci-fi-character-pack-8
-https://oco.itch.io/medieval-fantasy-character-pack
-https://chierit.itch.io/boss-demon-slime
-https://xzany.itch.io/samurai-2d-pixel-art
-https://ansimuz.itch.io/gothicvania-patreon-collection
-https://szadiart.itch.io/2d-soulslike-character
-https://aamatniekss.itch.io/fantasy-knight-free-pixelart-animated-character
-https://jesse-m.itch.io/skeleton-pack
-
-
-FONTS
-https://poppyworks.itch.io/silver
-
-
-
-BGMS
-https://www.youtube.com/watch?v=wMz9mbgNDyM&list=RD51k4FWnWqU8&index=8
-
-
-MANGA TO READ
-https://asuratoon.com/0873280421-reincarnation-of-the-strongest-sword-god-chapter-29/
-
-
-FONTS:
-source_code_pro
-hack
-jetbrains mono
-iosevka
-
-THEME: GUNA 
-COLORSCHEME: FLATLAND | FLATGRAMMER
-
-
-
-
-TWITTER PIXEL GODS
-https://twitter.com/20page_
-https://twitter.com/CAT02A
-https://twitter.com/BirdiBirdson/status/1740452081117651246
-
-
-
-*/ 
-
-
 s_idle = s_idle_v2_Sheet__chromatic_with_outline_strip24;//
 s_run = s_running_v2_Sheet_with_outline_strip4;//
 s_atk1 = s_basic_attack1_v2_Sheet_chromatic_with_outline_strip4;//
