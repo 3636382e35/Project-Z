@@ -19,5 +19,5 @@
   "sampleRate": 44100,
   "soundFile": "judgement_cut_sfx_cutted.mp3",
   "type": 0,
-  "volume": 0.14,
+  "volume": 0.31,
 }
