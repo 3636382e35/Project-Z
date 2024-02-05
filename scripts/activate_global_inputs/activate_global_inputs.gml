@@ -43,7 +43,6 @@ function activate_global_inputs(){
 		if VOLUME > 0 VOLUME -= 0.01;
 		audio_master_gain(VOLUME);
 	}
-	//uncomment to mute the shit
 	
 	if keyboard_check_pressed(vk_f12) {
 		FULL_SCREEN_MODE = !FULL_SCREEN_MODE;
@@ -115,7 +114,6 @@ function activate_global_inputs(){
 
 			if on_air vspeed = -0.1 * jump_mod;
 			jce_dmg = 10;
-			//state = "charge1";
 			state = "charge1";
 
 		}
@@ -124,7 +122,6 @@ function activate_global_inputs(){
 			if on_air vspeed = -0.1 * jump_mod;
 			jce_dmg = 20;
 			state = "charge1";
-			//show_debug_message(2);
 		}
 
 
