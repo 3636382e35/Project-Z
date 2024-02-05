@@ -17,7 +17,7 @@ CONTRAST_HIT_MODE = false;
 ZOOM_LEVEL = ctrl.ZOOM_LEVEL;
 VOLUME = 0;
 
-//charge pressed
+
 charge_pressed = 0;
 selected_charge_out = 0;
 
@@ -146,7 +146,7 @@ firstBloodPlayed = false;
 state = "move";
 
 
-//BELOW ARE EXPERIMENTALS ---------------------------------------
+//BELOW ARE EXPERIMENTAL
 
 is_drawing = false;
 
