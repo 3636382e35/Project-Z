@@ -41,7 +41,6 @@ s_high_time_loop = s_high_time_continous_loop_Sheet_chromatic_v2_with_outline_st
 s_parry = s_sword_parry_Sheet_chromatic_with_outline_strip7;
 s_sword_throw_on_air = s_sword_throw_on_air_Sheet_with_outline_strip6;
 s_sword_throw_on_ground = s_sword_throw_on_ground_Sheet_with_outline_strip8;
-
 s_sword_throw_spinning_projectile = sword_throw_spinning_projectile_Sheet_with_outline_strip4;
 
 
@@ -73,21 +72,13 @@ projectile_speed = 50;
 
 can_dash = false;
 dash_rate = 5;
-//
-
-/*
-
-//FOR MOUSE GRAPPLING SHITS
-active = false;
 
 
 
-*/
 lock_mode = false;
 obj_target = noone;
 target_name = "none";
 target = noone;
-
 
 
 
@@ -96,15 +87,15 @@ hspeed = 0;
 invincibility = false;
 move_speed = 0;
 grounded = 0;
-jump = -10; // Adjusted for a higher jump
+jump = -10;
 // can_jump = true;
 // jump_timer = 0;
 // jump_delay = 30;
 
 
 
-jump_mod = 2; //defauklt is 1.6
-grv = 0.3; // //defauklt is 0.2
+jump_mod = 2; //default is 1.6
+grv = 0.3; // //default is 0.2
 vsp_max = 10;
 
 
@@ -128,19 +119,13 @@ _id = self;
 
 _input = "";
 
-//-----------------for combo meters and such ------------------------
 
-// Variables
+// Variables for combo timer
 timer_max = 360;
 comboMeter = 0;
-timer = timer_max; // Time limit in seconds
+timer = timer_max;
 consecutiveKills = 0;
 firstBloodPlayed = false;
-
-
-
-//show hitboxes
-
 
 
 state = "move";
