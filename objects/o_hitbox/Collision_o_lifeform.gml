@@ -20,6 +20,19 @@ if (creator == noone || (creator == other && creator.id == other.id) || ds_list_
 
 
 
+	if hitbox_id == "Spinning Sword" {
+		other.speed = 0;
+
+		sword_throw_hit = instance_create_layer(x, y-23, layer+1, o_player_sword_melee_hit);
+		sword_throw_hit.sprite_index = s_hit_vfx_with_red_outline_Sheet_strip6;
+		sword_throw_hit.x = other.x;
+		sword_throw_hit.y = other.y-23;
+		sword_throw_hit.image_angle = other.image_angle;
+		sword_throw_hit.image_index = 0;
+		sword_throw_hit.depth = other.depth - 1;
+	}
+
+
 
 	if hitbox_id == "hightime"{
 		other.speed = 0;

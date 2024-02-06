@@ -46,7 +46,6 @@ switch(state){
 		player_dash_state(target);
 	break;
 
-
 	case "attk1":
 		player_attack_1_state(target);
 	break;

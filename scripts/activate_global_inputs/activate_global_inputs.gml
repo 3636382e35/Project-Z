@@ -61,7 +61,7 @@ function activate_global_inputs(){
 	}
 
 	if slowMode {
-		game_set_speed(222, gamespeed_microseconds);
+		game_set_speed(2222, gamespeed_microseconds);
 	} else {
 		game_set_speed(60, gamespeed_fps);
 	}
