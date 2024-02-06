@@ -71,7 +71,6 @@ function activate_global_inputs(){
 
 	if input.hold_l_key {
 		
-
 		if not instance_exists(o_charge_sprite) {
 			charge_sprite = instance_create_layer(x + (8 * image_xscale), y-23, layer, o_charge_sprite);
 		}
