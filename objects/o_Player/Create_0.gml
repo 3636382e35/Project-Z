@@ -9,9 +9,9 @@ slowMode = false; //test
 
 HP_ENABLED = true;
 FULL_SCREEN_MODE = false;
-GORE_MODE = true;
+GORE_MODE = false;
 DEBUG_MODE = false; 
-EXP_PARTICLE_MODE = true;
+EXP_PARTICLE_MODE = false;
 ANNOUNCER_MODE = false;
 CONTRAST_HIT_MODE = false;
 ZOOM_LEVEL = ctrl.ZOOM_LEVEL;
