@@ -86,12 +86,6 @@ switch(state){
 }
 
 
-//THE CODE BELOW ARE EXPERIMENTATION AND REFACTORING
-
-
-// state();
-// get_input_states(image_angle, direction);
-
 
 
 
