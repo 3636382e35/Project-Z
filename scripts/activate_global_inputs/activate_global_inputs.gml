@@ -47,10 +47,6 @@ function activate_global_inputs(){
 	window_set_fullscreen(FULL_SCREEN_MODE);
 
 
-
-
-
-
 	if keyboard_check_pressed(vk_lcontrol) {
 		slowMode = !slowMode;
 		
