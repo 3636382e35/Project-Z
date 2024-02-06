@@ -46,9 +46,7 @@ switch(state){
 		player_dash_state(target);
 	break;
 
-	//potential sfx for attack1 and attack2:
-		//https://motionarray.com/sound-effects/shovel-knife-stab-sword-slice-1370676/?q=sword%20slice&search_header=1
-		//https://motionarray.com/sound-effects/razorblade-slice-1224047/?q=sword%20slice&search_header=1
+
 	case "attk1":
 		player_attack_1_state(target);
 	break;
