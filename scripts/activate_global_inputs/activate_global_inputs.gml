@@ -6,7 +6,6 @@ function activate_global_inputs(){
 		DEBUG_MODE = !DEBUG_MODE;
 	}
 
-
 	if input.restart { 
 		restart_player_pos(); 
 	}
@@ -16,17 +15,14 @@ function activate_global_inputs(){
 		instance_create_layer(mouse_x,mouse_y,"Entities",o_death_mob);
 	}
 
-
 	if input.addEnemyKnight {
 		//randomize();
 		instance_create_layer(mouse_x,mouse_y,"Entities",o_knight);
 	}
-		
 	
 	if input.right_click or input.K{
 		check_fire_projectile(target, image_angle, direction);
 	}
-		
 
 	if (place_meeting(x, y-10, obj_wall)) {
 		vspeed = 0;	
