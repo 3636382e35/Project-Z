@@ -3,7 +3,7 @@
 
 
 
-scale = 2; //change this val to make the sprite go bigger or smaller
+scale = 1.5; //change this val to make the sprite go bigger or smaller
 image_xscale = scale;
 image_yscale = scale;
 
