@@ -125,8 +125,6 @@ function activate_global_inputs(){
 			//other.hp -= 5;
 
 		}
-
-
 		
 		selected_charge_out = charge_pressed;
 		charge_pressed = 0;
