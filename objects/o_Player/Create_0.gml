@@ -24,7 +24,7 @@ selected_charge_out = 0;
 audio_master_gain(0.00);
 
 jce_dmg = 0;
-
+jce_range = 500;
 
 
 

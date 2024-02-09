@@ -2,7 +2,7 @@
 var distance_to_player = point_distance(x,y, o_Player.x, o_Player.y);
 var direction_facing = image_xscale;
 
-
+within_jce_range = distance_to_player <= o_player.jce_range;
 
 
 

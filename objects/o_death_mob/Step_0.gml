@@ -1,4 +1,5 @@
 var distance_to_player = point_distance(x,y, o_Player.x, o_Player.y);
+within_jce_range = distance_to_player <= o_Player.jce_range;
 var direction_facing = image_xscale;
 
 if instance_exists(o_Player){

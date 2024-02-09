@@ -23,8 +23,8 @@ function player_judgement_cut_state(damage){
 			audio_play_sound(heavy_slash, 1, false);
 
 			with(o_lifeform){
-				//if point_distance(x,y, o_Player.x, o_Player.y) < 500 //   <------ TODO: FIX THIS SHIT - REFACTOR THE CODE - THE HITBOX MUST DEPEND ON THE MAIN CAMERA
-				create_hitbox(x-2, y-10, o_Player._id, single_blood, 3, "judgement_cut", 10, damage, image_xscale, image_angle, direction);
+				if point_distance(x, y, o_Player.x, o_Player.y) <= o_Player.jce_range
+					create_hitbox(x-2, y-10, o_Player._id, single_blood, 3, "judgement_cut", 10, damage, image_xscale, image_angle, direction);
 					
 			}
 		}

@@ -81,7 +81,7 @@ if o_Player.HP_ENABLED {
 }
 
 
-	if is_drawing {
+	if is_drawing && within_jce_range {
 	    var half_length = random_length / 2; // Calculate half the length
 	    var start_x = x - lengthdir_x(half_length, random_angle); // Calculate start point x
 	    var start_y = (y-23) - lengthdir_y(half_length, random_angle); // Calculate start point y

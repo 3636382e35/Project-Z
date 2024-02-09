@@ -35,10 +35,7 @@ chase_speed = 2;
 exp_val = 50;
 
 
-
- //nearest_neighbor = noone;
-
-
+within_jce_range = false;
 
 
 

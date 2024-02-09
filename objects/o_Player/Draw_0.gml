@@ -16,6 +16,7 @@ if active{
 if o_Player.DEBUG_MODE {
 
 	draw_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,1);
+	draw_circle(x, y, jce_range, true)
 
 
 }

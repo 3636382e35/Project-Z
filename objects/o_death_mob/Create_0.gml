@@ -10,7 +10,7 @@ max_hp = hp;
 draw_red_hp = max_hp;
 draw_red_max_hp = hp;
 
-
+within_jce_range = false;
 
 state = "idle";
 attack_range = 200;
