@@ -7,47 +7,36 @@ function get_input_states(obj_target, _angle, _dir){
 
 
 		if input.jump{
-
-
 			if lock_mode {
 				//if (obj_target > x) hspeed = 0.1; else hspeed = -0.1;
 				if (obj_target > x) image_xscale = 1 else image_xscale = -1;
 			}
-
-
 				if on_air {
 						magic_circle_jump_instance = instance_create_layer(x, y, layer, o_magic_circle_jump)
 						magic_circle_jump_instance.x = x;
 			        	magic_circle_jump_instance.y = y;
 			        	magic_circle_jump_instance.image_speed = 1;
 						magic_circle_jump_instance.depth = depth - 1;
-
 				}
 
-
-					vspeed = 0;
-					vspeed = jump * jump_mod;
-					_input = "SPACE";
-					state = "jump";
-
-
+				vspeed = 0;
+				vspeed = jump * jump_mod;
+				_input = "SPACE";
+				state = "jump";
 		}
-
-
-
-
 	
 		if input.right {
+
+			// image speed = slowMode ? -4.5 : 1.5;
 			image_speed = 1.5;
+
 			if  on_air {
 				sprite_index = s_jump;
 				if animation_hit_frame(6){
 					loopAnimation(o_Player, 5, 6);
 				}
-				
 			} else {
 				sprite_index = s_run;
-
 			}
 
 			if lock_mode {
@@ -55,7 +44,6 @@ function get_input_states(obj_target, _angle, _dir){
 			} else {
 				image_xscale = 1;
 			}
-
 
 			if input.ctrl_hold {
 				image_speed = 0.5;

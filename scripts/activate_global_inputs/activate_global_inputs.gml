@@ -49,16 +49,15 @@ function activate_global_inputs(){
 
 	if keyboard_check_pressed(vk_lcontrol) {
 		slowMode = !slowMode;
-		
 	}
 
 	if slowMode {
-		game_set_speed(2222, gamespeed_microseconds);
+		// game_set_speed(2222, gamespeed_microseconds);
+		show_debug_message("[DEBUG] SLOW MOTION ACTIVATED");
 	} else {
-		game_set_speed(60, gamespeed_fps);
+		// game_set_speed(60, gamespeed_fps);
+		show_debug_message("[DEBUG] SLOW MOTION DEACTIVAED");
 	}
-
-
 
 	timer -= 1;
 
@@ -68,9 +67,7 @@ function activate_global_inputs(){
 	    timer = timer_max;
 	}
 
-
 	if input.hold_l_key {
-		
 		if not instance_exists(o_charge_sprite) {
 			charge_sprite = instance_create_layer(x + (8 * image_xscale), y-23, layer, o_charge_sprite);
 		}
@@ -93,7 +90,6 @@ function activate_global_inputs(){
 		    }
 
 		    if charge_pressed == 3 {
-		    	
 		    	loopAnimation(charge_sprite, 13, 19);
 		    }
 		}
@@ -102,11 +98,9 @@ function activate_global_inputs(){
 
 	if input.released {
 		if charge_pressed == 1 {
-
 			if on_air vspeed = -0.1 * jump_mod;
 			jce_dmg = 10;
 			state = "charge1";
-
 		}
 
 		if charge_pressed == 2 {
@@ -115,14 +109,10 @@ function activate_global_inputs(){
 			state = "charge1";
 		}
 
-
 		if charge_pressed == 3 {
 			if on_air vspeed = -0.1 * jump_mod;
 			jce_dmg = 30;
-			//state = "charge1";
 			state = "charge1";
-			//other.hp -= 5;
-
 		}
 		
 		selected_charge_out = charge_pressed;

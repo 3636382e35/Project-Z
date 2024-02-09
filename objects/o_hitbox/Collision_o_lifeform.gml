@@ -8,6 +8,7 @@
 if (creator == noone || (creator == other && creator.id == other.id) || ds_list_find_index(hit_objects, other) != -1) exit;
 	var offset = 50;
 
+	var is_slowMode = o_Player.slowMode ? 0.1 : 1;
 	if (hitbox_id == "Spinning Sword" or hitbox_id == "judgement_cut" or hitbox_id == "hightime_loop" or hitbox_id == "SummonSwords" or hitbox_id == "attk1" or hitbox_id == "attk2" or hitbox_id == "dash") and other.on_air {
 		other.speed = 0;
 		other.vspeed = -0.6 * other.jump_mod;
@@ -17,6 +18,7 @@ if (creator == noone || (creator == other && creator.id == other.id) || ds_list_
 		other.speed = 0;
 		sword_throw_hit = instance_create_layer(x, y-23, layer+1, o_player_sword_melee_hit);
 		sword_throw_hit.sprite_index = s_hit_vfx_with_red_outline_Sheet_strip6;
+		sword_throw_hit.image_speed = is_slowMode;
 		sword_throw_hit.x = other.x;
 		sword_throw_hit.y = other.y-23;
 		sword_throw_hit.image_angle = other.image_angle;
@@ -27,6 +29,7 @@ if (creator == noone || (creator == other && creator.id == other.id) || ds_list_
 	if hitbox_id == "hightime"{
 		other.speed = 0;
 		hightime_hit = instance_create_layer(x, y-23, layer+1, o_player_sword_melee_hit);
+		hightime_hit.image_speed = is_slowMode;
 		hightime_hit.x = other.x+(offset * -creator.image_xscale);
 		hightime_hit.y = other.y+46;
 		hightime_hit.image_angle = other.image_xscale < 0 ? 45 : -240;
@@ -39,14 +42,16 @@ if (creator == noone || (creator == other && creator.id == other.id) || ds_list_
 		other.speed = 0;
 		judgement_cut_hit = instance_create_layer(x, y-23, layer+1, o_player_sword_melee_hit);
 		judgement_cut_hit.sprite_index = s_hit_vfx_with_red_outline_Sheet_strip6;
+		judgement_cut_hit.image_speed = is_slowMode;
 		judgement_cut_hit.x = other.x;
 		judgement_cut_hit.y = other.y-23;
 		randomize();
 		judgement_cut_hit.image_angle = random(360);
 		judgement_cut_hit.image_index = 0;
 		judgement_cut_hit.depth = other.depth - 1;
+
 		judgement_cut_hit2 = instance_create_layer(x, y-23, layer+1, death_hit_sprite);
-		judgement_cut_hit2.sprite_index = s_hit_vfx_with_red_outline_Sheet_strip6;
+		judgement_cut_hit.image_speed = is_slowMode;
 		judgement_cut_hit2.x = other.x;
 		judgement_cut_hit2.y = other.y-23;
 		randomize();
@@ -58,6 +63,7 @@ if (creator == noone || (creator == other && creator.id == other.id) || ds_list_
 	if hitbox_id == "hightime_loop"{
 		other.speed = 0;
 		hightime_loop = instance_create_layer(x, y-23, layer+1, o_player_sword_melee_hit);
+		hightime_loop.image_speed = is_slowMode;
 		hightime_loop.x = other.x+(offset * -creator.image_xscale);
 		hightime_loop.y = other.y+46;
 		hightime_loop.image_angle = other.image_xscale < 0 ? 45 : -240;
@@ -69,6 +75,7 @@ if (creator == noone || (creator == other && creator.id == other.id) || ds_list_
 	if hitbox_id == "lowtime"{
 		other.speed = 0;
 		lowtime_hit = instance_create_layer(x, y-23, layer+1, o_player_sword_melee_hit);
+		lowtime_hit.image_speed = is_slowMode;
 		lowtime_hit.x = other.x+((offset-30) * -creator.image_xscale);
 		lowtime_hit.y = other.y-50;
 		lowtime_hit.image_angle = other.image_xscale < 0 ? -45 : 240;
@@ -81,6 +88,7 @@ if (creator == noone || (creator == other && creator.id == other.id) || ds_list_
 		other.speed = 0;
 
 		attk2_hit = instance_create_layer(x, y-23, layer+1, o_player_sword_melee_hit);
+		attk2_hit.image_speed = is_slowMode;
 		attk2_hit.x = other.x+((offset-30) * -creator.image_xscale);
 		attk2_hit.y = other.y-70;
 		attk2_hit.image_angle = other.image_xscale < 0 ? -45 : 240;
@@ -91,6 +99,7 @@ if (creator == noone || (creator == other && creator.id == other.id) || ds_list_
 	if hitbox_id == "attk1" or hitbox_id == "attk3"{
 		other.speed = 0;
 		attack1_hit = instance_create_layer(x, y-23, layer+1, o_player_sword_melee_hit);
+		attack1_hit.image_speed = is_slowMode;
 		attack1_hit.x = other.x+(offset * -creator.image_xscale);
 		attack1_hit.y = other.y-20;
 		attack1_hit.image_angle = other.image_xscale < 0 ? -360 : 180;
@@ -103,9 +112,10 @@ if (creator == noone || (creator == other && creator.id == other.id) || ds_list_
 		if other.image_index < 2  { //default = 2jjjjj
 				audio_play_sound(player_parry, 1, false);
 				death_sprite = instance_create_layer(x, y, "projectiles",death_hit_sprite);
+				death_sprite.image_speed = is_slowMode;
 				death_sprite.x = other.x - (10 * image_xscale);
 				death_sprite.y = other.y-23;
-				death_sprite.image_angle = irandom(360);
+				death_sprite.image_angle = irandom(360)	;
 				show_debug_message("mob attack prefectly parried");
 		} else {
 			with(o_Player){
@@ -121,6 +131,7 @@ if (creator == noone || (creator == other && creator.id == other.id) || ds_list_
 		other.hp -= damage;
 		other.state = "knockback";
 		hit_instance = instance_create_layer(x, y-23, layer+1, o_hit_sprite);
+		hit_instance.image_speed = is_slowMode;
 		hit_instance.x = other.x;
 		hit_instance.y = other.y-23;
 		hit_instance.direction = random(360);
@@ -134,6 +145,7 @@ if (creator == noone || (creator == other && creator.id == other.id) || ds_list_
 			repeat(2){
 				randomize();
 				blud = instance_create_layer(x, y, layer,oBlood);
+				blud.image_speed = is_slowMode;
 				blud.x = other.x
 				blud.y = other.y  //default 0,48
 				blud.direction = irandom(360); //default 360
@@ -176,6 +188,7 @@ if instance_exists(o_Player) and creator.object_index == o_Player and other.hp <
 		repeat(10){
 			randomize();
 			blud = instance_create_layer(x, y, layer,oBlood);
+			blud.image_speed = is_slowMode;
 			blud.x = other.x;
 			blud.y = other.y;   //default 0,48
 			blud.direction = irandom(360); //default 360

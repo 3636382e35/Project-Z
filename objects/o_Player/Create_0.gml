@@ -9,7 +9,7 @@ slowMode = false; //test
 
 HP_ENABLED = true;
 FULL_SCREEN_MODE = false;
-GORE_MODE = false;
+GORE_MODE = true;
 DEBUG_MODE = false; 
 EXP_PARTICLE_MODE = false;
 ANNOUNCER_MODE = false;
