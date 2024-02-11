@@ -4,17 +4,16 @@ on_ground = place_meeting(x, y + 1, obj_wall);
 on_air = !on_ground && !place_meeting(x, y - 1, obj_wall);
 
 with(instance_create_depth(x+4, y-30, depth+1, o_eye_trail)){	
-	//sprite_index = eye_trail_sprite;
+	sprite_index = eye_trail_sprite;
 	x = other.x;
 	y = other.y;
 	image_alpha = 0.1;
 	sprite_index = other.sprite_index;
 	image_xscale = other.image_xscale;
-	image_blend = c_ltgray;
+	image_blend = c_white;
 	//image_angle = point_direction(x, y, other.x-25 * other.image_xscale, other.y-25 * other.image_xscale);
 	//image_alpha = 1;
 }
-
 
 switch(state){
 	case "move":
@@ -79,16 +78,3 @@ switch(state){
 		break;
 		
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

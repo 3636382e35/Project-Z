@@ -2,21 +2,17 @@ event_inherited();
 
 input = instance_create_layer(0,0,layer, o_input);
 ctrl = instance_create_layer(0,0,layer, oController);
-
-
-
 slowMode = false; //test
 
 HP_ENABLED = true;
 FULL_SCREEN_MODE = false;
-GORE_MODE = true;
+GORE_MODE = false;
 DEBUG_MODE = false; 
 EXP_PARTICLE_MODE = false;
 ANNOUNCER_MODE = false;
 CONTRAST_HIT_MODE = false;
 ZOOM_LEVEL = ctrl.ZOOM_LEVEL;
 VOLUME = 0;
-
 
 charge_pressed = 0;
 selected_charge_out = 0;
@@ -25,8 +21,6 @@ audio_master_gain(0.00);
 
 jce_dmg = 0;
 jce_range = 500;
-
-
 
 s_idle = s_idle_v2_Sheet__chromatic_with_outline_strip24;//
 s_run = s_running_v2_Sheet_with_outline_strip4;//
@@ -43,44 +37,27 @@ s_sword_throw_on_air = s_sword_throw_on_air_Sheet_with_outline_strip6;
 s_sword_throw_on_ground = s_sword_throw_on_ground_Sheet_with_outline_strip8;
 s_sword_throw_spinning_projectile = sword_throw_spinning_projectile_Sheet_with_outline_strip4;
 
-
-
-
 s_atk1_hitbox = s_basic_attack_1_hitbox_1; 
 s_dash = s_dash2_v2_Sheet_strip10;
 s_atk2_hitbox = s_basic_attack_2_hitbox;
 s_atk3_hitbox = S_basic_attack_3_1_hitbox_v2_chromatic;
 
-
 s_charge_hitbox = charged_attack_hitbox_Sheet_strip7;
-
-
 
 on_air = 0;
 on_ground = 1;
-
 
 //projectiles
 aim_dir = 0;
 projectile_dist = 300;
 fire_rate = 5;
 can_fire = true;
-
-
 projectile_speed = 50;
-
-
-can_dash = false;
-dash_rate = 5;
-
-
 
 lock_mode = false;
 obj_target = noone;
 target_name = "none";
 target = noone;
-
-
 
 vspeed = 0;
 hspeed = 0;
@@ -92,18 +69,13 @@ jump = -10;
 // jump_timer = 0;
 // jump_delay = 30;
 
-
-
 jump_mod = 2; //default is 1.6
 grv = 0.3; // //default is 0.2
 vsp_max = 10;
 
-
-
 can_attack = true;
 input_delay = 0;
 input_delay_max_sec = 200;
-
 
 kills = 0;
 level = 0;
@@ -112,13 +84,7 @@ max_exp = 10;
 strength = 5;
 
 _id = self;
-
-
-//state = "move";
-
-
 _input = "";
-
 
 // Variables for combo timer
 timer_max = 360;
@@ -127,16 +93,14 @@ timer = timer_max;
 consecutiveKills = 0;
 firstBloodPlayed = false;
 
-
 state = "move";
 
-
 //BELOW ARE EXPERIMENTAL
-
 is_drawing = false;
 
+
 // stateFree = function(){
-	
+
 
 // 		__hsp = (input.right - input.left) * __hspWalk;
 // 		__vsp = __vsp + __grv;
@@ -329,27 +293,4 @@ is_drawing = false;
 
 	
 // state = stateFree;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  

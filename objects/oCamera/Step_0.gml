@@ -5,7 +5,6 @@ var xOffset = 350; // Adjust these offset values as needed
 var yOffset = 100; // Adjust these offset values as needed
 var defaultScale = 1;
 
-
 //show_debug_message("Zoom Level: " + string(o_Player.ZOOM_LEVEL));
 
 var MIN_ZOOM_LEVEL = -5;
@@ -51,13 +50,11 @@ if (o_Player.lock_mode) {
             if o_Player.input._del {
                 o_Player.obj.hp = 0;
             }
-
-
+            
             var mid_x = (o_Player.x + o_Player.obj.x) / 2;
             var mid_y = (o_Player.y + o_Player.obj.y) / 2;
             xTo = mid_x - view_wview[0] / 2 + xOffset; // Apply offset here
             yTo = mid_y - view_hview[0] / 2 + yOffset; // Apply offset here
-
 
             var death_mob_lock_object_offset = 23;
 
@@ -131,6 +128,5 @@ if (instance_exists(o_target_sprite_obj) && instance_exists(o_Player.obj)) {
 } else {
     o_Player.lock_mode = false;
     o_Player.target_name = "none";
-    o_Player.obj_target = mouse_x;
 }
 

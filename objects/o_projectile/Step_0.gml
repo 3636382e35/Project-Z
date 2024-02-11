@@ -24,7 +24,7 @@ if place_meeting(x, y, o_knight) or place_meeting(x,y, o_death_mob){
 
 	summoon_sword_hit = instance_create_layer(x, y, layer+1, o_player_sword_melee_hit);
 	summoon_sword_hit.sprite_index = s_hit_vfx_with_red_outline_Sheet_strip6;
-	summoon_sword_hit.image_speed = is_slowMode; 
+	summoon_sword_hit.image_speed = is_slowMode;	 
 	summoon_sword_hit.x = other.x;
 	summoon_sword_hit.y = other.y;
 	summoon_sword_hit.image_angle = other.image_angle;

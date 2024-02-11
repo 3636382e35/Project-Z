@@ -53,10 +53,10 @@ function activate_global_inputs(){
 
 	if slowMode {
 		// game_set_speed(2222, gamespeed_microseconds);
-		show_debug_message("[DEBUG] SLOW MOTION ACTIVATED");
+		// show_debug_message("[DEBUG] SLOW MOTION ACTIVATED");
 	} else {
 		// game_set_speed(60, gamespeed_fps);
-		show_debug_message("[DEBUG] SLOW MOTION DEACTIVAED");
+		// show_debug_message("[DEBUG] SLOW MOTION DEACTIVAED");
 	}
 
 	timer -= 1;

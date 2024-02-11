@@ -6,7 +6,6 @@ knockback_time = 5;
 function projectile_die(){
 	speed = 0;
 	instance_destroy();
-	
 }
 
 function projectile_collide_wall() {
