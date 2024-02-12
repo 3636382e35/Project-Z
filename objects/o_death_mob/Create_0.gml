@@ -1,7 +1,7 @@
 event_inherited();
 state = "idle";
-hp = 1500;
 
+hp = 1500;
 
 draw_hp = 0;
 draw_max_hp = hp;
@@ -15,8 +15,6 @@ within_jce_range = false;
 state = "idle";
 attack_range = 200;
 chase_speed = 2;
-
-
 
 vspeed = 0;
 hspeed = 0;

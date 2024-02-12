@@ -52,7 +52,7 @@ aim_dir = 0;
 projectile_dist = 300;
 fire_rate = 5;
 can_fire = true;
-projectile_speed = 50;
+projectile_speed = 80;
 
 lock_mode = false;
 obj_target = noone;
@@ -98,13 +98,10 @@ state = "move";
 //BELOW ARE EXPERIMENTAL
 is_drawing = false;
 
-
 // stateFree = function(){
-
 
 // 		__hsp = (input.right - input.left) * __hspWalk;
 // 		__vsp = __vsp + __grv;
-
 
 
 // 		if __canJump-- > 0 and input.jump {

@@ -51,11 +51,12 @@ if (creator == noone || (creator == other && creator.id == other.id) || ds_list_
 		judgement_cut_hit.depth = other.depth - 1;
 
 		judgement_cut_hit2 = instance_create_layer(x, y-23, layer+1, death_hit_sprite);
-		judgement_cut_hit.image_speed = is_slowMode;
+		judgement_cut_hit2.image_xscale = 5;
+		judgement_cut_hit2.image_speed = is_slowMode;
 		judgement_cut_hit2.x = other.x;
 		judgement_cut_hit2.y = other.y-23;
 		randomize();
-		judgement_cut_hit2.image_angle = random(180);
+		judgement_cut_hit2.image_angle = random(360);
 		judgement_cut_hit2.image_index = 0;
 		judgement_cut_hit2.depth = other.depth - 1;
 	}

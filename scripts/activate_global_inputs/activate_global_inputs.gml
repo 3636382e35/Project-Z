@@ -1,5 +1,3 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function activate_global_inputs(){
 
 	if input._debug_mode {
@@ -11,12 +9,10 @@ function activate_global_inputs(){
 	}
 
 	if input.addEnemyDeath {
-		//randomize();
 		instance_create_layer(mouse_x,mouse_y,"Entities",o_death_mob);
 	}
-
+				
 	if input.addEnemyKnight {
-		//randomize();
 		instance_create_layer(mouse_x,mouse_y,"Entities",o_knight);
 	}
 	
@@ -25,7 +21,7 @@ function activate_global_inputs(){
 	}
 
 	if (place_meeting(x, y-10, obj_wall)) {
-		vspeed = 0;	
+		vspeed = 0;
 		vspeed += grv;		
 		vspeed = clamp(vspeed, -2, 2);			
 	}
@@ -43,20 +39,27 @@ function activate_global_inputs(){
 	if keyboard_check_pressed(vk_f12) {
 		FULL_SCREEN_MODE = !FULL_SCREEN_MODE;
 	}
-	
-	window_set_fullscreen(FULL_SCREEN_MODE);
 
+	window_set_fullscreen(FULL_SCREEN_MODE);
 
 	if keyboard_check_pressed(vk_lcontrol) {
 		slowMode = !slowMode;
 	}
 
 	if slowMode {
+		var effect2 = fx_create("_filter_contrast");
+		fx_set_parameter(effect2, "g_ContrastIntensity", 2);
+		layer_set_fx("Instances", effect2);
+		layer_set_visible("poles", false);
+		layer_set_visible("tree1", false);
+		layer_set_visible("tree2", false);
 		// game_set_speed(2222, gamespeed_microseconds);
 		// show_debug_message("[DEBUG] SLOW MOTION ACTIVATED");
 	} else {
-		// game_set_speed(60, gamespeed_fps);
-		// show_debug_message("[DEBUG] SLOW MOTION DEACTIVAED");
+		layer_clear_fx("Instances");
+		layer_set_visible("poles", true);
+		layer_set_visible("tree1", true);
+		layer_set_visible("tree2", true);
 	}
 
 	timer -= 1;
@@ -121,8 +124,6 @@ function activate_global_inputs(){
 		charge_sprite = noone;
 	}
 
-
-
 	var target_object_types = [o_knight, o_death_mob]; // Array containing object types
 
 	if input.lock_mode {
@@ -147,19 +148,15 @@ function activate_global_inputs(){
 	                }
 	            }
 	        }
-
 	        target = nearest_target;
 	    }
-
 	    lock_mode = !lock_mode; // Toggle lock mode
 	}
 
-	// Default values
 	obj = noone;
 	obj_target = mouse_x;
 	target_name = "none";
 
-	// Assigning values based on target existence
 	if instance_exists(target) {
 	    if (target != noone) {
 	        obj = target;
@@ -167,8 +164,4 @@ function activate_global_inputs(){
 	        target_name = string(target);
 	    }
 	}
-
-
-
-
 }

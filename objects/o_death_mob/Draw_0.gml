@@ -11,20 +11,11 @@ if instance_exists(o_Player){
 			}
 
 			draw_text(x, y-40,string(id));
-			
 			draw_text(x, y-80, string(state));
 			draw_text(x, y-100, "X= "+ string(x)+ " Y= " + string(y));
 			// if instance_exists(o_Player){
 			// 	if self.on_air draw_line_width_colour(x,y-5 , o_Player.x, o_Player.y-5,1,c_yellow, c_yellow);
 			// 	else draw_line_width_colour(x,y-5 , o_Player.x, o_Player.y-5,1,c_red, c_red);
-				
-				
-			// }
-
-
-
-
-
 		}
 	}
 
@@ -81,50 +72,50 @@ if o_Player.HP_ENABLED {
 }
 
 
-	if is_drawing && within_jce_range {
-	    var half_length = random_length / 2; // Calculate half the length
-	    var start_x = x - lengthdir_x(half_length, random_angle); // Calculate start point x
-	    var start_y = (y-23) - lengthdir_y(half_length, random_angle); // Calculate start point y
-	    var end_x = x + lengthdir_x(half_length, random_angle); // Calculate end point x
-	    var end_y = y + lengthdir_y(half_length, random_angle); // Calculate end point y
+	// if is_drawing && within_jce_range {
+	//     var half_length = random_length / 2; // Calculate half the length
+	//     var start_x = x - lengthdir_x(half_length, random_angle); // Calculate start point x
+	//     var start_y = (y-23) - lengthdir_y(half_length, random_angle); // Calculate start point y
+	//     var end_x = x + lengthdir_x(half_length, random_angle); // Calculate end point x
+	//     var end_y = y + lengthdir_y(half_length, random_angle); // Calculate end point y
 
 
 
-	    draw_self();
+	//     draw_self();
 
 
-	    var outline_thickness = 2;
+	//     var outline_thickness = 2;
 
 
-	    // Draw the line on top of the object with interpolated outline thickness
-	  	//draw_line_width_color(o_Player.x+start_x, o_Player.y +start_y, end_x, end_y, 2, c_white, c_white);
-	  	//draw_line_width_color(start_x, start_y, end_x, end_y, 3, c_red, c_red);
+	//     // Draw the line on top of the object with interpolated outline thickness
+	//   	//draw_line_width_color(o_Player.x+start_x, o_Player.y +start_y, end_x, end_y, 2, c_white, c_white);
+	//   	//draw_line_width_color(start_x, start_y, end_x, end_y, 3, c_red, c_red);
 
-	   	// randomize();
-	    //var outline_color = choose(c_black,c_red,c_fuchsia,c_yellow,c_green,c_aqua,c_purple);
+	//    	// randomize();
+	//     //var outline_color = choose(c_black,c_red,c_fuchsia,c_yellow,c_green,c_aqua,c_purple);
 
-	    draw_line_width_color(start_x, start_y, end_x, end_y, outline_thickness+2, c_black, c_black);
-	    draw_line_width_color(start_x, start_y, end_x, end_y, outline_thickness, c_white, c_white); // Adjust line color as needed // Adjust line width and color as needed
+	//     draw_line_width_color(start_x, start_y, end_x, end_y, outline_thickness+2, c_black, c_black);
+	//     draw_line_width_color(start_x, start_y, end_x, end_y, outline_thickness, c_white, c_white); // Adjust line color as needed // Adjust line width and color as needed
 
 
-	    // Connect lines between nearby instances of the same object type
-	    with (all) { // Replace with the actual object name
-	        if (id == o_death_mob.id) { // Ensure it's not checking against itself
-	            var other_half_length = other.random_length / 2;
-	            var other_start_x = other.x - lengthdir_x(other_half_length, other.random_angle);
-	            var other_start_y = (other.y-23) - lengthdir_y(other_half_length, other.random_angle);
-	            var other_end_x = other.x + lengthdir_x(other_half_length, other.random_angle);
-	            var other_end_y = other.y + lengthdir_y(other_half_length, other.random_angle);
+	//     // Connect lines between nearby instances of the same object type
+	//     with (all) { // Replace with the actual object name
+	//         if (id == o_death_mob.id) { // Ensure it's not checking against itself
+	//             var other_half_length = other.random_length / 2;
+	//             var other_start_x = other.x - lengthdir_x(other_half_length, other.random_angle);
+	//             var other_start_y = (other.y-23) - lengthdir_y(other_half_length, other.random_angle);
+	//             var other_end_x = other.x + lengthdir_x(other_half_length, other.random_angle);
+	//             var other_end_y = other.y + lengthdir_y(other_half_length, other.random_angle);
 
-	            // Check if lines are close enough to connect
-	            if (point_distance(end_x, end_y, other_start_x, other_start_y) < 20) {
-	                draw_line_width_color(end_x, end_y, other_start_x, other_start_y, 2, c_white, c_white);
-	            } else if (point_distance(end_x, end_y, other_end_x, other_end_y) < 20) {
-	                draw_line_width_color(end_x, end_y, other_end_x, other_end_y, 2, c_white, c_white);
-	            }
-	        }
-	    }
-	}
+	//             // Check if lines are close enough to connect
+	//             if (point_distance(end_x, end_y, other_start_x, other_start_y) < 20) {
+	//                 draw_line_width_color(end_x, end_y, other_start_x, other_start_y, 2, c_white, c_white);
+	//             } else if (point_distance(end_x, end_y, other_end_x, other_end_y) < 20) {
+	//                 draw_line_width_color(end_x, end_y, other_end_x, other_end_y, 2, c_white, c_white);
+	//             }
+	//         }
+	//     }
+	// }
 
 
 

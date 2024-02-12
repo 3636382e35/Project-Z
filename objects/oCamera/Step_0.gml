@@ -1,16 +1,11 @@
-
-
 var xTo, yTo;
 var xOffset = 350; // Adjust these offset values as needed
 var yOffset = 100; // Adjust these offset values as needed
 var defaultScale = 1;
 
-//show_debug_message("Zoom Level: " + string(o_Player.ZOOM_LEVEL));
-
 var MIN_ZOOM_LEVEL = -5;
 var MAX_ZOOM_LEVEL = 0;
 
-// Adjust zoom levels based on keyboard input
 if (keyboard_check(ord("M")) or mouse_wheel_up()) {
     if (o_Player.ZOOM_LEVEL > MIN_ZOOM_LEVEL) {
         o_Player.ZOOM_LEVEL -= 0.1; // Adjust the zoom out speed as needed
@@ -128,5 +123,6 @@ if (instance_exists(o_target_sprite_obj) && instance_exists(o_Player.obj)) {
 } else {
     o_Player.lock_mode = false;
     o_Player.target_name = "none";
+    o_Player.obj_target = mouse_x;
 }
 
