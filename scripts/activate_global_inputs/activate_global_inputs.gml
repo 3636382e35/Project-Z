@@ -7,7 +7,7 @@ function activate_global_inputs(){
 	if input.restart { 
 		restart_player_pos(); 
 	}
-
+	
 	if input.addEnemyDeath {
 		instance_create_layer(mouse_x,mouse_y,"Entities",o_death_mob);
 	}
@@ -117,7 +117,7 @@ function activate_global_inputs(){
 			jce_dmg = 30;
 			state = "charge1";
 		}
-		
+
 		selected_charge_out = charge_pressed;
 		charge_pressed = 0;
 		instance_destroy(o_charge_sprite);

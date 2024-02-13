@@ -1,5 +1,5 @@
 event_inherited();
-
+name = "Player";
 input = instance_create_layer(0,0,layer, o_input);
 ctrl = instance_create_layer(0,0,layer, oController);
 slowMode = false; //test

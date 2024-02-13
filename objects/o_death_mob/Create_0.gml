@@ -1,6 +1,6 @@
 event_inherited();
 state = "idle";
-
+name = "Deathhhhh";
 hp = 1500;
 
 draw_hp = 0;

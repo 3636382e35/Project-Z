@@ -19,8 +19,6 @@ function player_sword_throw_state(_target, _angle, xdir){
 		}
 
 
-		show_debug_message("image_index: " + string(ceil(image_index)) + " | sprite index : "+ string("sprite_index"))
-
 
 		// state_set_sprite(on_ground ? s_sword_throw_on_ground : s_sword_throw_on_air, 0);
 
@@ -28,6 +26,7 @@ function player_sword_throw_state(_target, _angle, xdir){
 			// audio_play_sound(sword_sound_2_36274, 1, false);
 			// create_hitbox(x,y,self, s_atk1_hitbox, 1, "attk1",4, 5, image_xscale, image_angle, direction);
 			check_sword_throw_projectiles(_target, _angle, xdir);
+
 		}
 
 	

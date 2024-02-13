@@ -1,0 +1,9 @@
+GameMaker Studio 1 font texture has been backed up at C:\Users\Dario\AppData\Local\GameMakerStudio2\GMS2TEMP\com.keeveegames.aberration_226451dd\mvc\conv\1448999425_Chromatic_Aberration_Shader_52a370b1\mvc\fonts\f_std\f_std.gms1.png
+Converting GML script: C:\Users\Dario\AppData\Local\GameMakerStudio2\GMS2TEMP\com.keeveegames.aberration_226451dd\mvc\conv\1448999425_Chromatic_Aberration_Shader_52a370b1\mvc\objects\o_back\Create_0.gml
+String not found: ConversionLog_ConvertedString 1 'u_Distance' "u_Distance"
+String not found: ConversionLog_ConvertedString 6 'Press space to turn on/off the shader.#' "Press space to turn on/off the shader.#"
+String not found: ConversionLog_ConvertedString 7 'Press Left or Right to change the distance.' "Press Left or Right to change the distance."
+
+Added compatibility script 'background\draw_background.gml'
+Added compatibility script 'background\__init_background.gml'
+Added compatibility script '__init_global.gml'
