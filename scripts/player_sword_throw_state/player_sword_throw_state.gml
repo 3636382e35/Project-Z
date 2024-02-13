@@ -2,14 +2,10 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function player_sword_throw_state(_target, _angle, xdir){
 
-		enable_cancel_animation();
-
+		// enable_cancel_animation();
 
 		vspeed = 0;
 		image_speed = 1;
-
-
-
 		
 		if on_air {
 			vspeed = -0.1 * jump_mod;
