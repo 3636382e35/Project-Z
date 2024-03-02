@@ -1,7 +1,9 @@
 event_inherited();
 state = "idle";
-name = "Deathhhhh";
-hp = 1500;
+type = "enemy";
+name = "death_mob";
+
+hp = 200;
 
 draw_hp = 0;
 draw_max_hp = hp;
@@ -12,12 +14,12 @@ draw_red_max_hp = hp;
 
 within_jce_range = false;
 
-state = "idle";
 attack_range = 200;
 chase_speed = 2;
 
 vspeed = 0;
 hspeed = 0;
+
 invincibility = false;
 move_speed = 0;
 jump = -10; // Adjusted for a higher jump
@@ -27,9 +29,7 @@ jump_mod = 1.6
 on_ground = 1;
 on_air = 0;
 
-
 exp_val = 50;
-
 can_attack = true;
 
 randomize();

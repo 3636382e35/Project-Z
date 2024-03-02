@@ -20,7 +20,7 @@ function player_dash_state(target){
 				magic_circle_instance_dash = instance_create_layer(x, y, layer, o_magic_circle_dash);
 				magic_circle_instance_dash.x = x;
 	        	magic_circle_instance_dash.y = y;
-	        	magic_circle_instance_dash.image_speed = o_Player.slowMode ? 0.1 : 1; 
+	        	magic_circle_instance_dash.image_speed = o_Player.SLOW_MODE ? 0.1 : 1; 
 	        	// magic_circle_instance_dash.image_speed = 1;
 				magic_circle_instance_dash.depth = depth - 1;
 				magic_circle_instance_dash.image_xscale = image_xscale;
@@ -28,7 +28,7 @@ function player_dash_state(target){
 				dust_particles = instance_create_layer(x,y, layer, o_dash_dust_particles);
 				dust_particles.x = x;
 	        	dust_particles.y = y;
-	        	dust_particles.image_speed = o_Player.slowMode ? 0.1 : 1; 
+	        	dust_particles.image_speed = o_Player.SLOW_MODE ? 0.1 : 1; 
 	        	// dust_particles.image_speed = 1;
 				dust_particles.depth = depth - 1;
 				dust_particles.image_xscale = image_xscale;

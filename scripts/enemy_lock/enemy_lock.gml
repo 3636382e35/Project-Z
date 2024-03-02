@@ -70,23 +70,18 @@ function enemy_lock(target){
 				global.textz = "F";
 				state = "hightime";
 			}
-
 		}
 		
 		if input.jump{
 			if (place_meeting(x, y-sign(vspeed), obj_wall)){
-				
 					//y = (y div 32) * 32;
 					vspeed = 0;	
 					vspeed += grv;
-					
-			
 			} else {
 					vspeed = 0;
 					vspeed = jump * jump_mod;
 					global.textz = "SPACE";
 					state = "jump";
 			}
-
 		}
 }

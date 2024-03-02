@@ -1,4 +1,7 @@
+// image_speed = o_Player.SLOW_MODE ? 0.1 : 1.0;
+event_inherited()
 var distance_to_player = point_distance(x,y, o_Player.x, o_Player.y);
+
 within_jce_range = distance_to_player <= o_Player.jce_range;
 var direction_facing = image_xscale;
 
@@ -31,7 +34,7 @@ switch(state){
 	
 	case "chase":
 	#region
-		apply_gravity("chase");	
+		apply_gravity("chase");			
 		state_set_sprite(s_death_mob_idle_final_Sheet_strip4, 0.1);
 		if not instance_exists(o_Player){
 			break;

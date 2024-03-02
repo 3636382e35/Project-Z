@@ -1,6 +1,7 @@
 event_inherited();
 image_xscale = -1;
-name = "knight";
+type = "enemy";
+name = "knight_mob";
 hp = global.knight_hp;
 
 draw_hp = 0;

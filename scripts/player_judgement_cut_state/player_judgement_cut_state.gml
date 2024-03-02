@@ -1,33 +1,34 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function player_judgement_cut_state(damage){
-
-		//var damage = 10;
+		state_set_sprite(charged_attack_bodysword_movement_Sheet_strip3, 0);
 		is_drawing = true;
-		alarm[1] = 20;
+		// alarm[1] = 3;
 
 		if on_air vspeed = -0.8 * jump_mod;
-
-
 		image_speed = 1.5;
 		if !can_attack {
 			sprite_index = 0;
 			state = "move";
-			
 		}
-		
-		//if !audio_is_playing(sword_sound_2_36274) audio_play_sound(sword_sound_2_36274, 1, false);
-		state_set_sprite(charged_attack_bodysword_movement_Sheet_strip3, 0);
+
+		// TODO: fix the sprite. must have 5-10 more strips to get fixed speed
+		show_debug_message("sprite index: " + string(sprite_index)+ " | image index: " + string(image_index))
+
 		if animation_hit_frame(1){
-
 			audio_play_sound(heavy_slash, 1, false);
-
 			with(o_lifeform){
-				if point_distance(x, y, o_Player.x, o_Player.y) <= o_Player.jce_range
-					create_hitbox(x-2, y-10, o_Player._id, single_blood, 3, "judgement_cut", 10, damage, image_xscale, image_angle, direction);
-					
+				if point_distance(x, y, o_Player.x, o_Player.y) <= o_Player.jce_range {
+					if self.id != o_Player.id {	
+						create_hitbox(x-2, y-10, o_Player.id, single_blood, 3, "judgement_cut", 10, damage, image_xscale, image_angle, direction);	
+						oCamera.screenshake = 10;	
+						oCamera.shakeDuration = 1;
+						oCamera._xyshake = true;
+						vspeed = -0.8 * jump_mod;
+					}
+				}	
 			}
 		}
-		
-		if animation_end() state  = "move";
+
+		if animation_end(){
+			state  = "move";
+		}
 }

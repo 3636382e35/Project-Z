@@ -1,12 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function get_input_states(obj_target, _angle, _dir){
-	
-	
-
-
-
-		if input.jump{
+		if input.jump {
 			if lock_mode {
 				//if (obj_target > x) hspeed = 0.1; else hspeed = -0.1;
 				if (obj_target > x) image_xscale = 1 else image_xscale = -1;
@@ -18,7 +13,6 @@ function get_input_states(obj_target, _angle, _dir){
 			        	magic_circle_jump_instance.image_speed = 1;
 						magic_circle_jump_instance.depth = depth - 1;
 				}
-
 				vspeed = 0;
 				vspeed = jump * jump_mod;
 				_input = "SPACE";
@@ -27,7 +21,7 @@ function get_input_states(obj_target, _angle, _dir){
 	
 		if input.right {
 
-			// image speed = slowMode ? -4.5 : 1.5;
+			// image speed = SLOW_MODE ? -4.5 : 1.5;
 			image_speed = 1.5;
 
 			if  on_air {
@@ -52,10 +46,6 @@ function get_input_states(obj_target, _angle, _dir){
 				image_speed = 1.5;
 				move_n_collide(4, 0);
 			}
-
-			
-
-
 
 			for(var i=0; i < 5; i += 1){
 				if i % 2 == 0 {
@@ -85,8 +75,6 @@ function get_input_states(obj_target, _angle, _dir){
 				image_speed = 1.5;
 			}
 
-
-
 			if lock_mode {
 				if (obj_target > x) image_xscale = 1 else image_xscale = -1;
 			} else {
@@ -110,9 +98,6 @@ function get_input_states(obj_target, _angle, _dir){
 					}
 				}
 			}
-			
-
-			
 			_input = "A";
 		}
 			
@@ -135,19 +120,13 @@ function get_input_states(obj_target, _angle, _dir){
 			}
 		}
 
-
-
-		if input.sword_throw {
+		if input.sword_throw and !instance_exists(o_spinning_sword_throw){
 			state = "sword_throw";
 		}	
-
-
 
 		if input.parry {
 			state = "parry";
 		}
-
-
 		
 		if input.dash {
 			if input.right image_xscale = 1;
@@ -216,11 +195,5 @@ function get_input_states(obj_target, _angle, _dir){
 				_input = "F";
 				state = "hightime";
 			}
-
 		}
-		
-		
-
-
-
 }

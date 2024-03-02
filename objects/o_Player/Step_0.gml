@@ -76,5 +76,4 @@ switch(state){
 		show_debug_message("State "+state+" does not exist" );
 		state = "move";
 		break;
-		
 }

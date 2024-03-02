@@ -31,13 +31,8 @@ var newHeight = camHeight / zoomFactor;
 camera_set_view_size(view_camera[0], newWidth, newHeight);
 
 if (o_Player.lock_mode) {
-    if !instance_exists(o_target_sprite_obj) {
-
+        if !instance_exists(o_target_sprite_obj) 
             target_box = instance_create_layer(0, 0, "projectiles", o_target_sprite_obj);
-            //show_debug_message("targetbox layer: " + string(target_box.layer));
-            //show_debug_message("o_target_sprite_obj layer: " + string(o_target_sprite_obj.layer));
-        }
-
         if !instance_exists(o_Player.obj) {
             xTo = follow.x;
             yTo = follow.y;
@@ -111,13 +106,18 @@ if (_xyshake) {
     x += panSpeedX;
     y += panSpeedY;
 }
-
 camera_set_view_pos(view_camera[0], x - (newWidth * 0.5), y - (newHeight * 0.5));
 
 if (instance_exists(o_target_sprite_obj) && instance_exists(o_Player.obj)) {
     target_box.depth = depth - 1;
         target_box.x = o_Player.obj.x;
-        target_box.y = o_Player.obj.y - 25; //25 
+        //TODO:  add unique y position of target box in every mob
+        if o_Player.obj.name == "death_mob" {
+            target_box.x = o_Player.obj.x-(3*image_xscale);
+            target_box.y = o_Player.obj.y - 35; //25
+        } else {
+            target_box.y = o_Player.obj.y - 25; //25
+        } 
         var a = point_direction(o_Player.x, o_Player.y, o_Player.obj.x, o_Player.obj.y);
         target_box.image_angle = a; // Rotate the target_box toward the player.obj
 } else {
@@ -125,4 +125,3 @@ if (instance_exists(o_target_sprite_obj) && instance_exists(o_Player.obj)) {
     o_Player.target_name = "none";
     o_Player.obj_target = mouse_x;
 }
-

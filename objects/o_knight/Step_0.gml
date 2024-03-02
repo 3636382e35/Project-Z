@@ -1,3 +1,4 @@
+event_inherited()
 var distance_to_player = point_distance(x,y, o_Player.x, o_Player.y);
 var direction_facing = image_xscale;
 
@@ -42,9 +43,7 @@ switch(state){
 			image_xscale = -1;
 		if distance_to_player > 250 state = "idle";
 		if distance_to_player <= attack_range and on_ground state = "attack";
-		if on_air {
-			//do nothing
-		} else {
+		if on_ground {
 			move_n_collide(direction_facing * chase_speed, 0);
             if (x == o_Player.x && y != o_Player.y) {
                 // Use the previous_image_xscale here for comparison
@@ -54,16 +53,12 @@ switch(state){
                     image_xscale = -1; // Reverse direction if not facing right
                 }
             }
-		}
-
-		//previous_image_xscale = image_xscale;
-		
+		} 
 	#endregion
 	break;
 	
 	case "attack":
 	#region Attack
-		
 		state_set_sprite(s_knight_attack_strip12, 0.1);
 		if animation_hit_frame(4){
 			create_hitbox(x, y, self, s_knight_attack_strip_frame4, 4, "knight_attack", 4,10	, image_xscale, image_angle, direction);

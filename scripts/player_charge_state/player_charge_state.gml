@@ -13,7 +13,6 @@ function player_charge_state(target, selected_charge_out){
 			check_charge_projectiles(target, image_xscale, selected_charge_out);
 		}
 
-
 		if animation_end(){
 			state = "move";
 		}

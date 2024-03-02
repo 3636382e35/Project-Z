@@ -1,10 +1,6 @@
 event_inherited();
 
-
-
-//end step
 if hp <= 0 {
-
 	if o_Player.CONTRAST_HIT_MODE {
 		layer_clear_fx("Instances");
 		// layer_set_visible("grass_front_blur", true);
@@ -16,10 +12,7 @@ if hp <= 0 {
 
 	}
 
-
 	audio_play_sound(knife_stab31, 1, false);
-	//audio_play_sound(choose(knife_stab, knife_stab31), 1, false);
-	//audio_play_sound(choose(knife_stab31), 1, false);
 	// if instance_exists(o_Player) and instance_exists(oCamera){
 	// 	oCamera._xyshake = true;
 	// 	var bs = instance_create_layer(x, y-23, layer, o_blood_splatter);
@@ -33,15 +26,21 @@ if hp <= 0 {
 	var r_offset = 16;
 	if o_Player.EXP_PARTICLE_MODE {
 		randomize();
-		
 		repeat (exp_val){
 			instance_create_layer(x+random_range(-r_offset, r_offset), y+random_range(-r_offset,-r_offset), "projectiles", o_experience);
 		}	
+	} else {
+		o_Player.experience += 50;
+		if(o_Player.experience >= o_Player.max_exp){
+			o_Player.level += 1;
+			o_Player.experience = o_Player.experience - o_Player.max_exp;
+			o_Player.max_exp += o_Player.max_exp;
+			o_Player.max_hp += 5;
+			o_Player.hp = o_Player.max_hp;
+			o_Player.strength += 5;
+		}
 	}
 
-
-	
-	
 	if o_Player.GORE_MODE {
 		repeat(100) {	
 			blud = instance_create_layer(x, y, layer,oBlood);
@@ -63,32 +62,18 @@ if hp <= 0 {
 	death_sprite.x = other.x;
 	death_sprite.y = other.y-23;
 
-
 	// knight_death_sprite_effect = instance_create_layer(x, y-23, "projectiles",o_knight_death_sprite_effect);
 	// knight_death_sprite_effect.x = other.x;
 	// knight_death_sprite_effect.y = other.y-23;
-	
-
-
-
 
 	oCamera.screenshake = 25;	
 	oCamera.shakeDuration = 5;
 	oCamera._xyshake = true;
 
-
-
-
 	o_Player.lock_mode = false;
 	o_Player.target_name = "none";
 	o_Player.obj = noone;
 	o_Player.obj_target = mouse_x;
-
-
-
-
-
-
 
 	instance_destroy();
 	//ds_grid_destroy(hp_grid);

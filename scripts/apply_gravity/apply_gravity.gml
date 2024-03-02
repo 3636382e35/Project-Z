@@ -7,7 +7,6 @@ function apply_gravity(_state) {
 	
 
     if (on_air) {
-
             state = _state;
             vspeed += grv;
             vspeed = clamp(vspeed, -3, 3);
@@ -23,9 +22,6 @@ function apply_gravity(_state) {
          }
 
          y += vspeed; 
-       
-		
-		
     } else if (on_ground) {
 		vspeed = 0;
 		hspeed = 0;

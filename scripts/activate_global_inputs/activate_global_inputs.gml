@@ -43,23 +43,25 @@ function activate_global_inputs(){
 	window_set_fullscreen(FULL_SCREEN_MODE);
 
 	if keyboard_check_pressed(vk_lcontrol) {
-		slowMode = !slowMode;
+		SLOW_MODE = !SLOW_MODE;
 	}
 
-	if slowMode {
-		var effect2 = fx_create("_filter_contrast");
-		fx_set_parameter(effect2, "g_ContrastIntensity", 2);
-		layer_set_fx("Instances", effect2);
-		layer_set_visible("poles", false);
-		layer_set_visible("tree1", false);
-		layer_set_visible("tree2", false);
-		// game_set_speed(2222, gamespeed_microseconds);
-		// show_debug_message("[DEBUG] SLOW MOTION ACTIVATED");
+	if SLOW_MODE {
+		// var effect2 = fx_create("_filter_contrast");
+		// fx_set_parameter(effect2, "g_ContrastIntensity", -3); //2
+		// layer_set_fx("Instances", effect2);
+		// layer_set_visible("grass_front_blur", false);
+		// layer_set_visible("tree1", false);
+		// layer_set_visible("tree2", false);
+		// layer_set_visible("mountain1", false);
+		// layer_set_visible("mountain2", false);
 	} else {
-		layer_clear_fx("Instances");
-		layer_set_visible("poles", true);
-		layer_set_visible("tree1", true);
-		layer_set_visible("tree2", true);
+		// layer_clear_fx("Instances");
+		// layer_set_visible("grass_front_blur", true);
+		// layer_set_visible("tree1", true);
+		// layer_set_visible("tree2", true);
+		// layer_set_visible("mountain1", true);
+		// layer_set_visible("mountain2", true);
 	}
 
 	timer -= 1;
@@ -97,7 +99,6 @@ function activate_global_inputs(){
 		    }
 		}
 	}
-
 
 	if input.released {
 		if charge_pressed == 1 {
@@ -141,7 +142,6 @@ function activate_global_inputs(){
 
 	            if (current_target != noone) {
 	                var distance_to_target = point_distance(x, y, current_target.x, current_target.y);
-
 	                if (nearest_target == noone || distance_to_target < nearest_distance) {
 	                    nearest_target = current_target;
 	                    nearest_distance = distance_to_target;

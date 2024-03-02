@@ -10,7 +10,7 @@ function player_hightime_state(){
 		if animation_hit_frame(1) {
 			attack3_smoke_dust = instance_create_layer(x,y, layer, o_attack3_smoke_dust);
 	       	attack3_smoke_dust.y = y;
-	       	attack3_smoke_dust.image_speed = slowMode ? 0.1 : 1;
+	       	attack3_smoke_dust.image_speed = SLOW_MODE ? 0.1 : 1;
 	       	// attack3_smoke_dust.image_speed = 1;
 	       	attack3_smoke_dust.depth = depth - 1;
 	       	attack3_smoke_dust.image_xscale = image_xscale * -1;

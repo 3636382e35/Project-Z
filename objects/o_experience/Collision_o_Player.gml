@@ -1,6 +1,5 @@
 if not instance_exists(other) exit;
 with (other) {
-
 	experience += 1;
 	if(experience >= max_exp){
 		level += 1;
@@ -10,7 +9,5 @@ with (other) {
 		hp = max_hp;
 		strength += 5;
 	}
-
-
 }
 instance_destroy();

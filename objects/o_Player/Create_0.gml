@@ -1,19 +1,19 @@
 event_inherited();
-name = "Player";
+
+type = "Player";
 input = instance_create_layer(0,0,layer, o_input);
 ctrl = instance_create_layer(0,0,layer, oController);
-slowMode = false; //test
 
+SLOW_MODE = false; //test
 HP_ENABLED = true;
 FULL_SCREEN_MODE = false;
 GORE_MODE = false;
 DEBUG_MODE = false; 
 EXP_PARTICLE_MODE = false;
-ANNOUNCER_MODE = false;
+ANNOUNCER_MODE = false; 
 CONTRAST_HIT_MODE = false;
 ZOOM_LEVEL = ctrl.ZOOM_LEVEL;
 VOLUME = 0;
-
 charge_pressed = 0;
 selected_charge_out = 0;
 
@@ -36,18 +36,15 @@ s_parry = s_sword_parry_Sheet_chromatic_with_outline_strip7;
 s_sword_throw_on_air = s_sword_throw_on_air_Sheet_with_outline_strip6;
 s_sword_throw_on_ground = s_sword_throw_on_ground_Sheet_with_outline_strip8;
 s_sword_throw_spinning_projectile = sword_throw_spinning_projectile_Sheet_with_outline_strip4;
-
 s_atk1_hitbox = s_basic_attack_1_hitbox_1; 
 s_dash = s_dash2_v2_Sheet_strip10;
 s_atk2_hitbox = s_basic_attack_2_hitbox;
 s_atk3_hitbox = S_basic_attack_3_1_hitbox_v2_chromatic;
-
 s_charge_hitbox = charged_attack_hitbox_Sheet_strip7;
 
 on_air = 0;
-on_ground = 1;
+on_ground = 1
 
-//projectiles
 aim_dir = 0;
 projectile_dist = 300;
 fire_rate = 5;
@@ -118,7 +115,6 @@ is_drawing = false;
 
 // 		x += __hsp;
 
-
 // 		if(place_meeting(x, y + __vsp, obj_wall)){
 // 			if(__vsp > 0) __canJump = 10;
 // 			while (abs(__vsp) > 0.1){
@@ -129,12 +125,8 @@ is_drawing = false;
 // 		}
 
 // 		y += __vsp;
-		
-		
 
 // } 
-	
-	
 	
 // stateAttack = function(){
 
@@ -204,14 +196,12 @@ is_drawing = false;
 
 // 			//enable_cancel_animation();
 		
-	
 // 			sprite_index = s_dash;
 // 			if animation_hit_frame(0){
 // 				audio_play_sound(clean_fast_swooshaiff_14784, 1, false);
 // 				create_hitbox(x,y,self, s_dash_tracks, 4, 4, 1, image_xscale, image_angle, direction);
 // 			}
 
-		
 // 			if image_xscale == 1 { 
 // 				trail_instance.image_xscale = 1;
 // 				move_n_collide(20, 0);
@@ -221,7 +211,6 @@ is_drawing = false;
 // 				move_n_collide(-20, 0);
 			
 // 			}
-
 
 
 // 			if animation_end() {
@@ -243,7 +232,6 @@ is_drawing = false;
 // 		if animation_hit_frame(0){
 // 			check_charge_projectiles(target, image_xscale, selected_charge_out);
 // 		}
-
 
 // 		if animation_end(){
 // 			state = stateFree;
@@ -277,11 +265,6 @@ is_drawing = false;
 // 		}
 // 		//enable_cancel_animation();
 // 		if animation_end() state = stateFree;
-
-
-
-
-
 // }
 	
 // stateKnockback = function(){
