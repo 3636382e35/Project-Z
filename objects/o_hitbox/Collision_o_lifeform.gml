@@ -1,6 +1,5 @@
 if (creator == noone || creator.type == other.type || (creator == other && creator.id == other.id) || ds_list_find_index(hit_objects, other) != -1) exit;
 	var offset = 50;
-	// if o_Player.DEBUG_MODE show_debug_message("[DEBUG] hitbox creator: " + string(creator.type) + " | receiver: "+ string(other.type));
 	var is_SLOW_MODE = o_Player.SLOW_MODE ? 0.1 : 1;
 
 	if (hitbox_id == "Spinning Sword" or hitbox_id == "judgement_cut" or hitbox_id == "hightime_loop" or hitbox_id == "SummonSwords" or hitbox_id == "attk1" or hitbox_id == "attk2" or hitbox_id == "dash") and other.on_air {
@@ -44,7 +43,6 @@ if (creator == noone || creator.type == other.type || (creator == other && creat
 		judgement_cut_hit.image_angle = random(360);
 		judgement_cut_hit.image_index = 0;
 		judgement_cut_hit.depth = other.depth - 1;
-
 		judgement_cut_hit2 = instance_create_layer(x, y-23, layer+1, death_hit_sprite);
 		judgement_cut_hit2.image_xscale = 5;
 		judgement_cut_hit2.image_speed = is_SLOW_MODE;
@@ -77,7 +75,10 @@ if (creator == noone || creator.type == other.type || (creator == other && creat
 		lowtime_hit.image_angle = other.image_xscale < 0 ? -45 : 240;
 		lowtime_hit.image_index = 0;
 		lowtime_hit.depth = other.depth - 1;
-		other.y += 10;
+		with(other){
+			// vspeed = -jump; //TODO: need not to double the execute of this code
+			move_and_collide(0, vspeed-jump, obj_wall);
+		}
 	}
 
 	if hitbox_id == "attk2"{

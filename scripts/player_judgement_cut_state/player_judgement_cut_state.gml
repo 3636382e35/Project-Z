@@ -1,7 +1,6 @@
 function player_judgement_cut_state(damage){
 		state_set_sprite(charged_attack_bodysword_movement_Sheet_strip3, 0);
 		is_drawing = true;
-		// alarm[1] = 3;
 
 		if on_air vspeed = -0.8 * jump_mod;
 		image_speed = 1.5;
@@ -11,7 +10,7 @@ function player_judgement_cut_state(damage){
 		}
 
 		// TODO: fix the sprite. must have 5-10 more strips to get fixed speed
-		show_debug_message("sprite index: " + string(sprite_index)+ " | image index: " + string(image_index))
+		// show_debug_message("sprite index: " + string(sprite_index)+ " | image index: " + string(image_index))
 
 		if animation_hit_frame(1){
 			audio_play_sound(heavy_slash, 1, false);

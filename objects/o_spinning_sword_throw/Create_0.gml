@@ -1,6 +1,6 @@
 
 
-damage = 5;
+damage = 1;
 range = 600;
 owner_id = noone;
 knockback_time = 5;

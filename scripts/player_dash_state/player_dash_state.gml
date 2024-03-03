@@ -10,7 +10,7 @@ function player_dash_state(target){
 			sprite_index = other.sprite_index;
 			image_xscale = other.image_xscale;
 			image_blend = c_dkgray;
-			image_alpha = 0.45;
+			image_alpha = 0.30; //0.45
 		}
 
 		image_speed = 2;
@@ -32,6 +32,7 @@ function player_dash_state(target){
 	        	// dust_particles.image_speed = 1;
 				dust_particles.depth = depth - 1;
 				dust_particles.image_xscale = image_xscale;
+				
 			}
 			// trail_instance = instance_create_layer(x, y, layer, o_dash_trail2); // Change "obj_trail" to the name of your trail object
 			// trail_instance.image_alpha = 0.5;
@@ -51,7 +52,6 @@ function player_dash_state(target){
 		move_n_collide(16 * image_xscale, 0);
 
 		if animation_end() {
-			
 			//instance_destroy(trail_instance);
 			state = "move";
 		}
