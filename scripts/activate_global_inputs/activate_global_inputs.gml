@@ -28,13 +28,13 @@ function activate_global_inputs(){
 
 	if keyboard_check(221){
 		if VOLUME < 1 VOLUME += 0.01;
-		audio_master_gain(VOLUME);
 	}
 
 	if keyboard_check(219){
 		if VOLUME > 0 VOLUME -= 0.01;
-		audio_master_gain(VOLUME);
 	}
+	
+	audio_master_gain(VOLUME);
 	
 	if keyboard_check_pressed(vk_f12) {
 		FULL_SCREEN_MODE = !FULL_SCREEN_MODE;
