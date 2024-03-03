@@ -11,13 +11,14 @@ function check_fire_projectile(_target, _angle, xdir){
 			}
 			
 			var inst = instance_create_layer(x,y-15, "Instances", o_projectile);
+
 			audio_play_sound(judgement_cut_sfx_cutted, 1, false);
+			
 			with(inst){
 				speed = other.projectile_speed;
 				direction = _dir;
 				image_angle = _dir; 
 				
 			}
-			
 		}
 }

@@ -17,8 +17,6 @@ VOLUME = 0;
 charge_pressed = 0;
 selected_charge_out = 0;
 
-audio_master_gain(0.00);
-
 jce_dmg = 0;
 jce_range = 500;
 
@@ -96,7 +94,6 @@ state = "move";
 is_drawing = false;
 
 // stateFree = function(){
-
 // 		__hsp = (input.right - input.left) * __hspWalk;
 // 		__vsp = __vsp + __grv;
 

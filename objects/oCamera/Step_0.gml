@@ -62,12 +62,18 @@ if (o_Player.lock_mode) {
             var s = point_distance(x, y, o_Player.obj.x, o_Player.obj.y);
             
             // Define a scaling factor based on distance
-            var scale = defaultScale + (s * 0.001); // Tweak the multiplier as needed  - default: 0.001
+            // var scale = defaultScale + (s * 0.001); // Tweak the multiplier as needed  - default: 0.001
             
-            target_box.image_xscale = scale;
-            target_box.image_yscale = scale;
+            // target_box.image_xscale = scale;
+            // target_box.image_yscale = scale;
+
+
+            //change size of target box sprite
+            target_box.image_xscale = 1.5;
+            target_box.image_yscale = 1.5;
         }
 } else {
+
     if (instance_exists(o_target_sprite_obj)) {
         instance_destroy(o_target_sprite_obj);
         target_box = noone; // Reset target_box to noone
@@ -80,6 +86,7 @@ if (o_Player.lock_mode) {
         xTo = o_Player.x;
         yTo = o_Player.y;
     }
+    
 }
 
 var panSpeedX = (xTo - x) / camera_to_player_speed;
@@ -113,7 +120,7 @@ if (instance_exists(o_target_sprite_obj) && instance_exists(o_Player.obj)) {
         target_box.x = o_Player.obj.x;
         //TODO:  add unique y position of target box in every mob
         if o_Player.obj.name == "death_mob" {
-            target_box.x = o_Player.obj.x-(3*image_xscale);
+            target_box.x = o_Player.obj.x-(2 * image_xscale);
             target_box.y = o_Player.obj.y - 35; //25
         } else {
             target_box.y = o_Player.obj.y - 25; //25
