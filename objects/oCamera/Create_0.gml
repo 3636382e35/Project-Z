@@ -25,6 +25,6 @@ if instance_exists(o_Player){
 	shakeDuration = 3; // Adjust the duration of screenshake
 	shakeTimer = 0;
 
-	camera_to_player_speed = 20; //40 //the lower the value, the fastest the camera panned to player
+	camera_to_player_speed = 40; //40 //the lower the value, the fastest the camera panned to player
 
 }
