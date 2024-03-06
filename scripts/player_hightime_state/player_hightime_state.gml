@@ -11,7 +11,8 @@ function player_hightime_state(){
 	       	attack3_smoke_dust.depth = depth - 1;
 	       	attack3_smoke_dust.image_xscale = image_xscale * -1;
 			create_hitbox(x,y,self, s_high_time_hitbox, 1, "hightime", 4, 5, image_xscale, image_angle, direction);
-			audio_play_sound(knife_slice_41231, 1, false);
+			// audio_play_sound(knife_slice_41231, 1, false);
+			audio_play_sound(mixkit_dagger_woosh_1487, 1, false);
 		}
 
 		enable_cancel_animation();

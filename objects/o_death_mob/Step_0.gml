@@ -69,9 +69,15 @@ switch(state){
 		
 		if can_attack {
 			state_set_sprite(s_death_mob_attack1_Sheet_strip12, 0.1);
-			if animation_hit_frame(1) or animation_hit_frame(2){
-				//TODO: add fucntionality to this animation index :)
+			if animation_hit_frame(1) {
+				//TODO: must have warning hitbox here :>
+				warning_hitbox_is_active = true;
 			}
+
+			if animation_hit_frame(3) {
+				warning_hitbox_is_active = false;
+			}
+
 			if animation_hit_frame(4){
 				create_hitbox(x, y, self, s_death_mob_attack1_hitbox, 4, "death_mob_attack", 4,10, image_xscale, image_angle, direction);
 			}

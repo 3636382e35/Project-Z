@@ -1,5 +1,6 @@
 event_inherited();
 
+
 type = "Player";
 input = instance_create_layer(0,0,layer, o_input);
 ctrl = instance_create_layer(0,0,layer, oController);
@@ -39,6 +40,8 @@ s_dash = s_dash2_v2_Sheet_strip10;
 s_atk2_hitbox = s_basic_attack_2_hitbox;
 s_atk3_hitbox = S_basic_attack_3_1_hitbox_v2_chromatic;
 s_charge_hitbox = charged_attack_hitbox_Sheet_strip7;
+s_player_lowtime_loop = s_lowtime_loop_chromatic_strip7;
+s_player_lowtime_loop_hitbox = s_lowtime_loop_hitbox_strip7 
 
 on_air = 0;
 on_ground = 1
@@ -139,7 +142,6 @@ is_drawing = false;
 // 			create_hitbox(x,y,self, s_atk1_hitbox, 1, 4, 5, image_xscale, image_angle, direction);
 // 		}
 
-
 // 		if input.attk or input.attk2{
 // 			state = stateAttack2;
 // 		}
@@ -148,9 +150,8 @@ is_drawing = false;
 
 
 // }
-	
+
 // stateAttack2 = function(){
-	
 // 		if !audio_is_playing(mixkit_dagger_woosh_1487) audio_play_sound(mixkit_dagger_woosh_1487, 1, false);
 // 		state_set_sprite(s_atk2, 0);
 // 		if animation_hit_frame(0) create_hitbox(x,y,self, s_atk2_hitbox, 3, 4, 5, image_xscale, image_angle, direction);

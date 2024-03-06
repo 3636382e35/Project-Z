@@ -54,12 +54,12 @@ if o_Player.DEBUG_MODE {
 	draw_text(offset, y +20, "Current Instances created: " + string(instance_count));
 	draw_text(offset, y +40, "Lock Mode: " + string(o_Player.lock_mode)+" Curr Target: "+o_Player.target_name);
 	draw_text(offset, y +60, string(o_Player.experience)+" / "+string(o_Player.max_exp));
-	// draw_text(offset, y +100, "WINDOW WIDTH: "+string(window_get_width())+" | WINDOW HEIGHT: "+string(window_get_height()));
-	// draw_text(offset, y +120, "DISPLAY_GET_HEIGHT: "+string(display_get_height())+"| DISPLAY_GET_WIDTH: "+string(display_get_width()));
-	// draw_text(offset, y +140, "VIEW_HVIEW[0]: "+string(view_hview[0])+"| VIEW_WVIEW[0]: "+string(view_wview[0]));
-	// draw_text(offset, y +160, "VIEW_HPORT[0]: "+string(view_hport[0])+"| VIEW_WPORT[0]: "+string(view_wport[0]));
-	// draw_text(offset, y +180, "camera_get_view_width: "+string(camera_get_view_width(view_camera[0]))+"| camera_get_view_height: "+string(camera_get_view_height(view_camera[0])));
-	// draw_text(offset, y +200, "CAMERA_ZOOM_LEVEL: "+string(o_Player.ZOOM_LEVEL));
+	draw_text(offset, y +100, "WINDOW WIDTH: "+string(window_get_width())+" | WINDOW HEIGHT: "+string(window_get_height()));
+	draw_text(offset, y +120, "DISPLAY_GET_HEIGHT: "+string(display_get_height())+"| DISPLAY_GET_WIDTH: "+string(display_get_width()));
+	draw_text(offset, y +140, "VIEW_HVIEW[0]: "+string(view_hview[0])+"| VIEW_WVIEW[0]: "+string(view_wview[0]));
+	draw_text(offset, y +160, "VIEW_HPORT[0]: "+string(view_hport[0])+"| VIEW_WPORT[0]: "+string(view_wport[0]));
+	draw_text(offset, y +180, "camera_get_view_width: "+string(camera_get_view_width(view_camera[0]))+"| camera_get_view_height: "+string(camera_get_view_height(view_camera[0])));
+	draw_text(offset, y +200, "CAMERA_ZOOM_LEVEL: "+string(o_Player.ZOOM_LEVEL));
 }
 
  

@@ -1,17 +1,16 @@
-
 function player_dash_state(target){
 
 		enable_cancel_animation();
 		speed = 0;
 		sprite_index = s_dash;
 
-		 with(instance_create_depth(x, y, depth+1, o_eye_trail)){	
-			//sprite_index = eye_trail_sprite;
-			sprite_index = other.sprite_index;
-			image_xscale = other.image_xscale;
-			image_blend = c_dkgray;
-			image_alpha = 0.30; //0.45
-		}
+		// with(instance_create_depth(x, y, depth+1, o_eye_trail)){	
+		// 	//sprite_index = eye_trail_sprite;
+		// 	sprite_index = other.sprite_index;
+		// 	image_xscale = other.image_xscale;
+		// 	image_blend = c_dkgray;
+		// 	image_alpha = 0.30; //0.45
+		// }
 
 		image_speed = 2;
 
@@ -33,15 +32,15 @@ function player_dash_state(target){
 				dust_particles.depth = depth - 1;
 				dust_particles.image_xscale = image_xscale;
 			}
+
 			trail_instance = instance_create_layer(x, y, layer, o_dash_trail2); // Change "obj_trail" to the name of your trail object
 			trail_instance.image_alpha = 1;
-			trail_instance.image_xscale = 1;
-			trail_instance.image_yscale = 0.5;
         	trail_instance.x = x;
-        	trail_instance.y = y-5;
+        	trail_instance.y = y; //-5
         	trail_instance.image_speed = 1;
 			trail_instance.depth = depth - 1;
 			trail_instance.image_xscale = image_xscale;
+
 			audio_play_sound(clean_fast_swooshaiff_14784, 1, false);
 			// create_hitbox(x,y,self, s_dash_tracks, 4, "dash",4, 1, image_xscale, image_angle, direction);
 		}
@@ -50,7 +49,7 @@ function player_dash_state(target){
 			create_hitbox(x,y,self, s_dash, 4, "dash",4, 1, image_xscale, image_angle, direction);
 		}
 
-		move_n_collide(16 * image_xscale, 0);
+		move_n_collide(20 * image_xscale, 0); //16
 
 		if animation_end() {
 			//instance_destroy(trail_instance);

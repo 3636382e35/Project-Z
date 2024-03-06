@@ -1,4 +1,3 @@
-
 var _dist = point_distance(xstart, ystart, x ,y);
 with(instance_create_depth(x, y, depth+1, o_eye_trail)){	
 	//sprite_index = eye_trail_sprite;

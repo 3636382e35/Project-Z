@@ -67,7 +67,6 @@ if (o_Player.lock_mode) {
             // target_box.image_xscale = scale;
             // target_box.image_yscale = scale;
 
-
             //change size of target box sprite
             target_box.image_xscale = 1.5;
             target_box.image_yscale = 1.5;
@@ -86,7 +85,7 @@ if (o_Player.lock_mode) {
         xTo = o_Player.x;
         yTo = o_Player.y;
     }
-    
+
 }
 
 var panSpeedX = (xTo - x) / camera_to_player_speed;
@@ -113,6 +112,7 @@ if (_xyshake) {
     x += panSpeedX;
     y += panSpeedY;
 }
+
 camera_set_view_pos(view_camera[0], x - (newWidth * 0.5), y - (newHeight * 0.5));
 
 if (instance_exists(o_target_sprite_obj) && instance_exists(o_Player.obj)) {

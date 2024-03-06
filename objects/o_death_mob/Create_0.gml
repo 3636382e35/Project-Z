@@ -37,3 +37,7 @@ is_drawing = false;
 line_length = 1000000; // Adjust the length of the lines as needed
 random_angle = irandom(360); // Generate a random angle
 random_length = irandom_range(20, line_length); // Randomize the length within a range
+
+warning_hitbox_is_active = false;
+
+

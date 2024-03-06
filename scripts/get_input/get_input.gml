@@ -14,6 +14,9 @@ function get_input(){
 	dash = keyboard_check_pressed(vk_shift);
 
 	parry = keyboard_check_pressed(ord("H"));
+	hold_w = keyboard_check(ord("W"));
+	hold_s = keyboard_check(ord("S"));
+
 
 	high_attk = keyboard_check_pressed(ord("F"));
 	sword_throw = keyboard_check_pressed(ord("C"));

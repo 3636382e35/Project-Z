@@ -1,3 +1,4 @@
+event_inherited()
 draw_self();
 draw_set_color(c_white);
 
@@ -13,8 +14,15 @@ if instance_exists(o_Player){
 			draw_text(x, y-40,string(id));
 			draw_text(x, y-80, string(state));
 			draw_text(x, y-00, "X= "+ string(x)+ " Y= " + string(y));
+
 		}
 	}
+
+	if warning_hitbox_is_active {
+		//TODO: add rectangle hitbox warning
+		// draw_rectangle_color(bbox_left,bbox_top,bbox_right,bbox_bottom,c_red,c_red,c_red,c_red,true);
+	}
+  
 
 	var x_offset;
 	var temp_offset = 50;

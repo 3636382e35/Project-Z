@@ -71,7 +71,11 @@ switch(state){
 	case "hightime_loop":
 		player_hightime_loop_state();
 	break;
-	
+
+	case "lowtime_loop":
+		player_lowtime_loop_state()
+	break;
+
 	default:
 		show_debug_message("State "+state+" does not exist" );
 		state = "move";

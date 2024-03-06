@@ -2,7 +2,7 @@ if o_Player.DEBUG_MODE {
 	if input.hold_l_key || state = "judgement_cut" {
 		draw_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,1);
 		draw_set_alpha(0.5);
-		draw_circle_colour(x, y, jce_range, c_red, c_red, false)
+		// draw_circle_colour(x, y, jce_range, c_red, c_red, false)
 		draw_set_alpha(1);
 		draw_circle(x, y, jce_range, true)
 	}

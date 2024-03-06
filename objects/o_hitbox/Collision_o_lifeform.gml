@@ -5,7 +5,7 @@ if (creator == noone || creator.type == other.type || (creator == other && creat
 	if (hitbox_id == "Spinning Sword" or hitbox_id == "judgement_cut" or hitbox_id == "hightime_loop" or hitbox_id == "SummonSwords" or hitbox_id == "attk1" or hitbox_id == "attk2" or hitbox_id == "dash") and other.on_air {
 		// show_debug_message("lifted by " + string(hitbox_id));
 		other.speed = 0;
-		other.vspeed = -1.0 * other.jump_mod; //default = 0.6
+		other.vspeed = -1.0 * other.jump_mod ;//default = 0.6
 	}
 
 	if hitbox_id == "Spinning Sword" {

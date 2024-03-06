@@ -13,9 +13,11 @@ with(instance_create_depth(x, y, depth+1, o_eye_trail)){
 if place_meeting(x, y, o_knight) or place_meeting(x,y, o_death_mob){
 
 	speed = 0;
+	var lifespan = 4
+	var knockback = 1 
 
 	if animation_hit_frame(0) or animation_hit_frame(2) {
-			create_hitbox(x,y, o_Player._id, sword_throw_spinning_projectile_Sheet_with_outline_strip4, 1, "Spinning Sword", 2, damage, image_xscale, image_angle, direction);
+			create_hitbox(x,y, o_Player._id, sword_throw_spinning_projectile_Sheet_with_outline_strip4, knockback, "Spinning Sword", lifespan, damage, image_xscale, image_angle, direction);
 			// summoon_sword_hit = instance_create_layer(x, y, layer+1, o_player_sword_melee_hit);
 			// summoon_sword_hit.sprite_index = s_hit_vfx_with_red_outline_Sheet_strip6;
 			// summoon_sword_hit.x = other.x;
