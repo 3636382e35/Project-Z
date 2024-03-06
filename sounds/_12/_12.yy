@@ -10,14 +10,14 @@
   "bitRate": 128,
   "compression": 0,
   "conversionMode": 0,
-  "duration": 0.408,
+  "duration": 0.360208,
   "parent": {
     "name": "o_Player_Hit_o_knight_SFX",
     "path": "folders/Sounds/o_Player_Hit_o_knight_SFX.yy",
   },
   "preload": false,
   "sampleRate": 44100,
-  "soundFile": "_12.mp3",
+  "soundFile": "_12.ogg",
   "type": 0,
   "volume": 1.0,
 }
