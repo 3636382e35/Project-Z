@@ -9,7 +9,7 @@ function player_lowtime_state(){
 
 		if animation_end(){
 			// if input.high_attk_hold && input.hold_s{
-			if input.high_attk_hold {
+			if input.high_attk_hold && input.hold_s {
 				state = "lowtime_loop";
 			} else {
 				state = "move";

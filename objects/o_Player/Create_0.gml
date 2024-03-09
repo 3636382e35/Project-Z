@@ -1,11 +1,10 @@
 event_inherited();
 
-
 type = "Player";
 input = instance_create_layer(0,0,layer, o_input);
 ctrl = instance_create_layer(0,0,layer, oController);
 
-SLOW_MODE = false; //test
+SLOW_MODE = false; 
 HP_ENABLED = true;
 FULL_SCREEN_MODE = false;
 GORE_MODE = false;
@@ -99,7 +98,6 @@ is_drawing = false;
 // stateFree = function(){
 // 		__hsp = (input.right - input.left) * __hspWalk;
 // 		__vsp = __vsp + __grv;
-
 
 // 		if __canJump-- > 0 and input.jump {
 // 			__vsp = __vspJump;
@@ -209,7 +207,6 @@ is_drawing = false;
 // 				move_n_collide(-20, 0);
 			
 // 			}
-
 
 // 			if animation_end() {
 			
