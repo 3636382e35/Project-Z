@@ -31,6 +31,7 @@ function player_dash_state(target){
 	        	// dust_particles.image_speed = 1;
 				dust_particles.depth = depth - 1;
 				dust_particles.image_xscale = image_xscale;
+				
 			}
 
 			trail_instance = instance_create_layer(x, y, layer, o_dash_trail2); // Change "obj_trail" to the name of your trail object
