@@ -97,6 +97,12 @@ switch(state){
 	case "knockback":
 	#region Knockback	
 		knockback_state(s_death_mob_knockback_temp_strip4, "chase");	
+		if animation_hit_frame(1) {
+			bs = instance_create_layer(x, y-23, layer-1, o_blood_splatter);
+			bs.image_xscale = -image_xscale;
+			bs.direction = direction	
+		}	
+
 	#endregion
 	break;
 }

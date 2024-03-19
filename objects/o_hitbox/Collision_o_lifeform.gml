@@ -6,6 +6,7 @@ if (creator == noone || creator.type == other.type || (creator == other && creat
 		// show_debug_message("lifted by " + string(hitbox_id));
 		other.speed = 0;
 		other.vspeed = -1.0 * other.jump_mod ;//default = 0.6
+
 	}
 
 	if hitbox_id == "Spinning Sword" {
@@ -102,6 +103,12 @@ if (creator == noone || creator.type == other.type || (creator == other && creat
 		attack1_hit.depth = other.depth - 1;	
 	}	
 
+	// var bs = instance_create_layer(x, y-23, layer, o_blood_splatter);
+	// with(bs){
+	// 	image_xscale = other.image_xscale;
+	// 	direction = other.direction;
+	// }
+
 	other.knockback_speed = knockback;
 
 	if other.state == "parry" {
@@ -126,6 +133,7 @@ if (creator == noone || creator.type == other.type || (creator == other && creat
 	} else {
 		other.hp -= damage;
 		other.state = "knockback";
+
 		hit_instance = instance_create_layer(x, y-23, layer+1, o_hit_sprite);
 		hit_instance.image_speed = is_SLOW_MODE;
 		hit_instance.x = other.x;

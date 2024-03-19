@@ -1,5 +1,5 @@
-global.width = window_get_width();
-global.height = window_get_height();
+// #global.width = window_get_width();
+// global.height = window_get_height();
 
 ini_open("conf.ini"); //open file
 

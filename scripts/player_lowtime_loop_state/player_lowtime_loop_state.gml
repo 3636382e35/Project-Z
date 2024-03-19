@@ -7,8 +7,8 @@ function player_lowtime_loop_state(){
 	var damage = 1.5
 	var lifespan = 4; 
 
-	if input.high_attk_hold && input.hold_s {
-		apply_gravity("lowtime_loop")
+	if input.high_attk_hold{
+		// apply_gravity("lowtime_loop")
 		enable_cancel_animation();
 		if animation_hit_frame(4) or animation_hit_frame(6){
 			create_hitbox(x,y,self,sprite_index,knockback,"hightime_loop",lifespan,damage,image_xscale, image_angle, direction);
@@ -24,7 +24,7 @@ function player_lowtime_loop_state(){
 		}
 
 	} else {
-		state = "move";
+		state = "move"
 		image_speed = 1.5;
 	}
 }

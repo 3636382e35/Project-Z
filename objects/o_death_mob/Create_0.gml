@@ -3,7 +3,7 @@ state = "idle";
 type = "enemy";
 name = "death_mob";
 
-hp = 200;
+hp = 500;
 
 draw_hp = 0;
 draw_max_hp = hp;
