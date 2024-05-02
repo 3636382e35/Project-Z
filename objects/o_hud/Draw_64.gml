@@ -1,5 +1,4 @@
- if not instance_exists(o_Player) exit;
-
+if not instance_exists(o_Player) exit;
 
 var hp_x = 8;
 var hp_y = 8;
@@ -7,21 +6,18 @@ var hp_y = 8;
 var hp_width = 198;
 var hp_height = 6;
 if instance_exists(o_Player){
-
 	draw_hp = lerp(draw_hp, o_Player.hp, 0.1);
 	draw_max_hp = o_Player.max_hp;
-	
-
 } else {
 	draw_hp = lerp(draw_hp, 0, 0.2);
 	hp_percent = draw_hp;
 }
 
-
 var hp_percent = draw_hp / draw_max_hp;
 
 draw_rectangle_color(hp_x, hp_y, hp_x + (hp_width * hp_percent), hp_y + hp_height,c_white, c_white, c_white, c_white, false);
 draw_text(hp_x+250, hp_y, "FPS: " + string(fps));
+draw_text(hp_x+350, hp_y, string(o_Player.dash_counter));
 draw_rectangle_color(hp_x, hp_y, hp_x + hp_width, hp_y + hp_height, c_dkgray, c_dkgray, c_dkgray, c_dkgray, true);
 
 if o_Player.DEBUG_MODE {
@@ -61,6 +57,3 @@ if o_Player.DEBUG_MODE {
 	draw_text(offset, y +180, "camera_get_view_width: "+string(camera_get_view_width(view_camera[0]))+"| camera_get_view_height: "+string(camera_get_view_height(view_camera[0])));
 	draw_text(offset, y +200, "CAMERA_ZOOM_LEVEL: "+string(o_Player.ZOOM_LEVEL));
 }
-
- 
-

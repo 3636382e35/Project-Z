@@ -124,7 +124,8 @@ if (creator == noone || creator.type == other.type || (creator == other && creat
 			with(o_Player){
 				//TODO: add another parry sound for non-perfect parry
 				randomize();
-				audio_play_sound(choose(_1,_2,_3,_4,_5,_6,_7,_8,_9,_10,_11,_12), 1, false);
+				// audio_play_sound(choose(_1,_2,_3,_4,_5,_6,_7,_8,_9,_10,_11,_12), 1, false);
+				audio_play_sound(_10, 1, false);
 				knockback_state(s_idle, "idle");
 			}
 			other.hp -= damage/2;
@@ -143,7 +144,8 @@ if (creator == noone || creator.type == other.type || (creator == other && creat
 		hit_instance.depth = other.depth - 1;
 
 		randomize();
-		audio_play_sound(choose(_1,_2,_3,_4,_5,_6,_7,_8,_9,_10,_11,_12), 1, false);
+		// audio_play_sound(choose(_1,_2,_3,_4,_5,_6,_7,_8,_9,_10,_11,_12), 1, false);
+		audio_play_sound(_10, 1, false);
 
 		if o_Player.GORE_MODE {
 			repeat(2){
@@ -152,7 +154,7 @@ if (creator == noone || creator.type == other.type || (creator == other && creat
 				blud.image_speed = is_SLOW_MODE;
 				blud.x = other.x
 				blud.y = other.y  //default 0,48
-				blud.direction = irandom(360); //default 360
+				blud.direction = irandom(180); //default 360
 			}
 		}
 	}

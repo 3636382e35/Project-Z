@@ -2,7 +2,10 @@ activate_global_inputs();
 
 on_ground = place_meeting(x, y + 1, obj_wall);
 on_air = !on_ground && !place_meeting(x, y - 1, obj_wall);
-
+if on_ground can_jump = true;
+dash_counter += 0.02;
+if dash_counter >= 3 {dash_counter = 3;}
+if dash_counter <= 0 {dash_counter = 0;}
 // with(instance_create_depth(x+4, y-30, depth+1, o_eye_trail)){	
 // 	sprite_index = eye_trail_sprite;
 // 	x = other.x;
@@ -16,6 +19,7 @@ on_air = !on_ground && !place_meeting(x, y - 1, obj_wall);
 // }
 
 switch(state){
+
 	case "move":
 		player_move_state(target);
 	break;

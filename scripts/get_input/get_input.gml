@@ -1,6 +1,6 @@
 function get_input(){
 
-	//TODO: USE https://cherrytree.at/misc/vk.htm for other keys
+	// NOTE: USE https://cherrytree.at/misc/vk.htm for other keys
 
 
 	lock_mode = keyboard_check_pressed(vk_tab);

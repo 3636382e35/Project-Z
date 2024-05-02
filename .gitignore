@@ -1,0 +1,11 @@
+# ignores yy file format for Game Maker stuffs
+*.yy
+*.yyp
+*.png
+*.resource_order
+*.json
+*.mp3
+*.ogg
+*.ttf
+*.otf
+*.wav

@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "animation_hit_fram",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "global_scripts",
-    "path": "folders/Scripts/global_scripts.yy",
+  "$GMScript":"",
+  "%Name":"animation_hit_fram",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"animation_hit_fram",
+  "parent":{
+    "name":"global_scripts",
+    "path":"folders/Scripts/global_scripts.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

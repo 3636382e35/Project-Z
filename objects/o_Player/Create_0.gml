@@ -7,9 +7,9 @@ ctrl = instance_create_layer(0,0,layer, oController);
 SLOW_MODE = false; 
 HP_ENABLED = true;
 FULL_SCREEN_MODE = false;
-GORE_MODE = false;
+GORE_MODE = true;
 DEBUG_MODE = false; 
-EXP_PARTICLE_MODE = false;
+EXP_PARTICLE_MODE = true;
 ANNOUNCER_MODE = false; 
 CONTRAST_HIT_MODE = false;
 ZOOM_LEVEL = ctrl.ZOOM_LEVEL;
@@ -62,9 +62,12 @@ invincibility = false;
 move_speed = 0;
 grounded = 0;
 jump = -10;
-// can_jump = true;
-// jump_timer = 0;
-// jump_delay = 30;
+
+dash_counter = 3;
+
+can_jump = true;
+jump_timer = 0;
+jump_delay = 30;
 
 jump_mod = 2; //default is 1.6
 grv = 0.3; // //default is 0.2
@@ -268,4 +271,3 @@ is_drawing = false;
 
 	
 // state = stateFree;
- 

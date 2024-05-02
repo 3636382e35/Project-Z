@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "create_hitbox",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "global_scripts",
-    "path": "folders/Scripts/global_scripts.yy",
+  "$GMScript":"",
+  "%Name":"create_hitbox",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"create_hitbox",
+  "parent":{
+    "name":"global_scripts",
+    "path":"folders/Scripts/global_scripts.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

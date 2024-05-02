@@ -2,22 +2,24 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function get_input_states(obj_target, _angle, _dir){
 		if input.jump {
-			if lock_mode {
-				//if (obj_target > x) hspeed = 0.1; else hspeed = -0.1;
-				if (obj_target > x) image_xscale = 1 else image_xscale = -1;
-			}
-				if on_air {
-						magic_circle_jump_instance = instance_create_layer(x, y, layer, o_magic_circle_jump)
-						magic_circle_jump_instance.x = x;
-			        	magic_circle_jump_instance.y = y;
-			        	magic_circle_jump_instance.image_speed = 1;
-						magic_circle_jump_instance.depth = depth - 1;
-				}
-				vspeed = 0;
-				vspeed = jump * jump_mod;
-				_input = "SPACE";
-				state = "jump";
-		}
+      if can_jump {
+        if lock_mode {
+          //if (obj_target > x) hspeed = 0.1; else hspeed = -0.1;
+          if (obj_target > x) image_xscale = 1 else image_xscale = -1;
+        }
+        if on_air {
+              magic_circle_jump_instance = instance_create_layer(x, y, layer, o_magic_circle_jump)
+              magic_circle_jump_instance.x = x;
+                  magic_circle_jump_instance.y = y;
+                  magic_circle_jump_instance.image_speed = 1;
+              magic_circle_jump_instance.depth = depth - 1;
+        }
+        vspeed = 0;
+        vspeed = jump * jump_mod;
+        _input = "SPACE";
+        state = "jump";
+      }
+    }
 	
 		if input.right {
 
@@ -129,11 +131,14 @@ function get_input_states(obj_target, _angle, _dir){
 		}
 		
 		if input.dash {
-			if input.right image_xscale = 1;
-			if input.left image_xscale = -1;
-			image_index = 0;
-			_input = "SHIFT";
-			state = "dash";
+      if dash_counter >= 1 { 
+        if input.right image_xscale = 1;
+        if input.left image_xscale = -1;
+        image_index = 0;
+        _input = "SHIFT";
+        state = "dash";
+        dash_counter -= 1;
+      }
 		}
 			
 		
@@ -141,9 +146,7 @@ function get_input_states(obj_target, _angle, _dir){
 
 			vspeed = 0;
 
-			//oShakeController.shake = true; //TODO : fix this shit
 			if lock_mode {
-				//if (obj_target > x) hspeed = 0.1; else hspeed = -0.1;
 				if (obj_target > x) image_xscale = 1 else image_xscale = -1;
 			}
 

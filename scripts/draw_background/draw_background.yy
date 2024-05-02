@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "draw_background",
-  "isCompatibility": true,
-  "isDnD": false,
-  "parent": {
-    "name": "background",
-    "path": "folders/Scripts/compatibility/background.yy",
+  "$GMScript":"",
+  "%Name":"draw_background",
+  "isCompatibility":true,
+  "isDnD":false,
+  "name":"draw_background",
+  "parent":{
+    "name":"background",
+    "path":"folders/Scripts/compatibility/background.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

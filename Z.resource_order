@@ -1,5 +1,5 @@
 {
-  "FolderOrderSettings": [
+  "FolderOrderSettings":[
     {"name":"Animation Curves","order":10,"path":"folders/Animation Curves.yy",},
     {"name":"Extensions","order":12,"path":"folders/Extensions.yy",},
     {"name":"Fonts","order":7,"path":"folders/Fonts.yy",},
@@ -34,7 +34,7 @@
     {"name":"Tile Sets","order":3,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
-  "ResourceOrderSettings": [
+  "ResourceOrderSettings":[
     {"name":"s_running_v2_Sheet_with_outline_strip4","order":57,"path":"sprites/s_running_v2_Sheet_with_outline_strip4/s_running_v2_Sheet_with_outline_strip4.yy",},
     {"name":"_4","order":15,"path":"sounds/_4/_4.yy",},
     {"name":"s_dash_tracks_Sheet_chromatic_with_outline_strip10116","order":72,"path":"sprites/s_dash_tracks_Sheet_chromatic_with_outline_strip10116/s_dash_tracks_Sheet_chromatic_with_outline_strip10116.yy",},
@@ -274,6 +274,7 @@
     {"name":"firstblood","order":2,"path":"sounds/firstblood/firstblood.yy",},
     {"name":"s_target_lock_sprite","order":16,"path":"sprites/s_target_lock_sprite/s_target_lock_sprite.yy",},
     {"name":"get_input_states","order":13,"path":"scripts/get_input_states/get_input_states.yy",},
+    {"name":"s_lowtime_loop_chromatic_strip_rescaled7119","order":75,"path":"sprites/s_lowtime_loop_chromatic_strip_rescaled7119/s_lowtime_loop_chromatic_strip_rescaled7119.yy",},
     {"name":"knockback_state","order":14,"path":"scripts/knockback_state/knockback_state.yy",},
     {"name":"death_hit_sprite","order":28,"path":"objects/death_hit_sprite/death_hit_sprite.yy",},
     {"name":"player_knockback_state","order":8,"path":"scripts/player_knockback_state/player_knockback_state.yy",},

@@ -1,0 +1,37 @@
+# Mouse management
+set -g mouse on
+
+#Meta(Win-Key)
+    bind-key -n M-h previous-window
+    bind-key -n M-l next-window
+
+# Customise the visuals on top of One Dark for tmux. Might be good to put into
+# its own file at some stage.
+onedark_black="#282C34"
+dark_black="#1c1c1c"
+white="#ffffff"
+
+set -g pane-border-style "fg=color238 bg=#282C34" # i.e. "$onedark_black"
+set -g pane-active-border-style "fg=color14 bg=#282C34" # i.e. "$onedark_black"
+
+# Info on left (I don't have a session display for now)
+set -g status-left ''
+
+set -g status-position bottom
+set -g status-style "bg=black"
+set -g status-left '#[fg=color14,bold]#S '
+set -g status-right '  #[fg=color250] %Y-%m-%d #[fg=white,bold]%H:%M:%S'
+
+set -g status-right-length 50
+set -g status-left-length 20
+
+# Set the style for windows.
+# TODO: note that the 'red' in the status is not being shown, this is because we 
+# need a multi-conditional at the moment these are sequential so the most recent
+# overwrite the others.
+# setw -g window-status-format '#I#[fg=colour245]:#[fg=color250]#{?window_activity_flag, #[fg=green],}#{?window_bell_flag,#[fg=red]#[blink],}#W#[fg=colour50]#F '
+# This is the same status as above, with no highlight for activity.
+setw -g window-status-format '#I#[fg=colour245,bg=black]:#W#[fg=colour50,bg=black]#F '
+
+# Set the style for the _current_ window.
+setw -g window-status-current-format '#[fg=color250,bg=black]#I#[fg=color245]:#[fg=color255,bold]#W#[fg=colour50]#F '

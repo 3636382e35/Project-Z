@@ -23,7 +23,6 @@ function create_hitbox(_x,_y, creator, sprite, knockback, hitbox_id,lifespan, da
 	hitbox.direction = _dir;
 	hitbox.hitbox_id = hitbox_id;
 
-
 }
 
 

@@ -6,14 +6,14 @@ var defaultScale = 1;
 var MIN_ZOOM_LEVEL = -5;
 var MAX_ZOOM_LEVEL = 0;
 
-if (keyboard_check(ord("M")) or mouse_wheel_up()) {
-    if (o_Player.ZOOM_LEVEL > MIN_ZOOM_LEVEL) {
-        o_Player.ZOOM_LEVEL -= 0.1; // Adjust the zoom out speed as needed
-        if (o_Player.ZOOM_LEVEL < MIN_ZOOM_LEVEL) {
-            o_Player.ZOOM_LEVEL = MIN_ZOOM_LEVEL; // Limit zoom level to the minimum
-        }
-    }
-}
+  if (keyboard_check(ord("M")) or mouse_wheel_up()) {
+      if (o_Player.ZOOM_LEVEL > MIN_ZOOM_LEVEL) {
+          o_Player.ZOOM_LEVEL -= 0.1; // Adjust the zoom out speed as needed
+          if (o_Player.ZOOM_LEVEL < MIN_ZOOM_LEVEL) {
+              o_Player.ZOOM_LEVEL = MIN_ZOOM_LEVEL; // Limit zoom level to the minimum
+          }
+      }
+  }
 
 if (keyboard_check(ord("N")) or mouse_wheel_down()) {
     if (o_Player.ZOOM_LEVEL < MAX_ZOOM_LEVEL) {
@@ -85,50 +85,49 @@ if (o_Player.lock_mode) {
         xTo = o_Player.x;
         yTo = o_Player.y;
     }
-
 }
 
 var panSpeedX = (xTo - x) / camera_to_player_speed;
 var panSpeedY = (yTo - y) / camera_to_player_speed;
 
 // Apply screenshake if _xyshake is true
-if (_xyshake) {
-    if (shakeTimer <= shakeDuration) {
-            var shakeX = random_range(-screenshake, screenshake);
-            var shakeY = random_range(-screenshake, screenshake);
+  if (_xyshake) {
+      if (shakeTimer <= shakeDuration) {
+              var shakeX = random_range(-screenshake, screenshake);
+              var shakeY = random_range(-screenshake, screenshake);
 
-            x += panSpeedX + shakeX;
-            y += panSpeedY + shakeY;
+              x += panSpeedX + shakeX;
+              y += panSpeedY + shakeY;
 
-            shakeTimer++;
-            //show_debug_message(string(shakeTimer));
-        } else {
-            _xyshake = false; // Reset screenshake variable
-            screenshake = 3; // Adjust the magnitude of screenshake
-            shakeDuration = 3; // Adjust the duration of screenshake
-            shakeTimer = 0;
-        }
-} else {
-    x += panSpeedX;
-    y += panSpeedY;
-}
+              shakeTimer++;
+              //show_debug_message(string(shakeTimer));
+          } else {
+              _xyshake = false; // Reset screenshake variable
+              screenshake = 3; // Adjust the magnitude of screenshake
+              shakeDuration = 3; // Adjust the duration of screenshake
+              shakeTimer = 0;
+          }
+  } else {
+      x += panSpeedX;
+      y += panSpeedY;
+  }
 
 camera_set_view_pos(view_camera[0], x - (newWidth * 0.5), y - (newHeight * 0.5));
-
-if (instance_exists(o_target_sprite_obj) && instance_exists(o_Player.obj)) {
-    target_box.depth = depth - 1;
-        target_box.x = o_Player.obj.x;
-        //TODO:  add unique y position of target box in every mob
-        if o_Player.obj.name == "death_mob" {
-            target_box.x = o_Player.obj.x-(2 * image_xscale);
-            target_box.y = o_Player.obj.y - 35; //25
-        } else {
-            target_box.y = o_Player.obj.y - 25; //25
-        } 
-        var a = point_direction(o_Player.x, o_Player.y, o_Player.obj.x, o_Player.obj.y);
-        target_box.image_angle = a; // Rotate the target_box toward the player.obj
-} else {
-    o_Player.lock_mode = false;
-    o_Player.target_name = "none";
-    o_Player.obj_target = mouse_x;
-}
+// TODO: Fix the point distance shit
+  if (instance_exists(o_target_sprite_obj) && instance_exists(o_Player.obj)) {
+      target_box.depth = depth - 1;
+          target_box.x = o_Player.obj.x;
+          // TODO:  add unique y position of target box in every mob
+          if o_Player.obj.name == "death_mob" {
+              target_box.x = o_Player.obj.x-(2 * image_xscale);
+              target_box.y = o_Player.obj.y - 35; //25
+          } else {
+              target_box.y = o_Player.obj.y - 25; //25
+          } 
+          var a = point_direction(o_Player.x, o_Player.y, o_Player.obj.x, o_Player.obj.y);
+          target_box.image_angle = a; // Rotate the target_box toward the player.obj
+  } else {
+      o_Player.lock_mode = false;
+      o_Player.target_name = "none";
+      o_Player.obj_target = mouse_x;
+  }

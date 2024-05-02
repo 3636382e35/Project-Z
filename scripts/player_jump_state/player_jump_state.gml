@@ -2,6 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function player_jump_state(){
 	
+    can_jump = false;
 		// if input.right { 
 		// 	image_xscale = 1;
 		// 	move_n_collide(4,0);

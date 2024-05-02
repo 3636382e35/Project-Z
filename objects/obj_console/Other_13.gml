@@ -25,7 +25,6 @@ switch (command_to_run) {
 		if (!object_exists(object_to_try_and_access) or instance_number(object_to_try_and_access) == 0) { // object doesnt exist 
 			third_level[0] = ""
 			
-			// TODO: YOU COULD TURN THE TEXT RED HERE
 			
 		} else {
 			third_level = variable_instance_get_names(object_to_try_and_access.id)
