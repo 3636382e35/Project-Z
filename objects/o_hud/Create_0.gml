@@ -10,5 +10,8 @@ if not instance_exists(o_Player) exit;
 draw_hp = 0;
 draw_max_hp = o_Player.hp;
 
+draw_dash_counter = 0;
+draw_max_dash_counter = o_Player.dash_counter;
+
 
 draw_set_font(f_one);
