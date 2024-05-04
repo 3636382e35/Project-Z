@@ -7,7 +7,7 @@ function player_dash_state(target){
 			sprite_index = other.sprite_index;
 			image_xscale = other.image_xscale;
 			image_blend = c_dkgray;
-			image_alpha = 0.30; //0.45
+			image_alpha = 0.45; //0.45
 		}
 
 		image_speed = 2;
@@ -29,13 +29,13 @@ function player_dash_state(target){
 				dust_particles.image_xscale = image_xscale;
 			}
 
-			trail_instance = instance_create_layer(x, y, layer, o_dash_trail2); 
-			trail_instance.image_alpha = 1;
-      trail_instance.x = x;
-      trail_instance.y = y; //-5
-      trail_instance.image_speed = 1;
-			trail_instance.depth = depth - 1;
-			trail_instance.image_xscale = image_xscale;
+			// trail_instance = instance_create_layer(x, y, layer, o_dash_trail2); 
+			// trail_instance.image_alpha = 1;
+   //    trail_instance.x = x;
+   //    trail_instance.y = y; //-5
+   //    trail_instance.image_speed = 1;
+			// trail_instance.depth = depth - 1;
+			// trail_instance.image_xscale = image_xscale;
 
 			audio_play_sound(clean_fast_swooshaiff_14784, 1, false);
 		}

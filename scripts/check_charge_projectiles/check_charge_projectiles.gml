@@ -22,7 +22,7 @@ function check_charge_projectiles(_target, xscale, selected_charge_out){
 			if selected_charge_out == 2 state = "judgement_cut"; //var inst = instance_create_layer(x, y-23, "projectiles", o_charge_projectile2);
 			if selected_charge_out == 3 state = "judgement_cut"; //var inst = instance_create_layer(x, y-23, "projectiles", o_charge_projectile3);
 				//var inst = instance_create_layer(x, y-5, "projectiles", o_charge_projectile);
-			audio_play_sound(judgement_cut_sfx_cutted, 1, false);
+			// audio_play_sound(judgement_cut_sfx_cutted, 1, false);
 			//motion_add(opposite_dir, 2);
 
 			// with(inst){

@@ -1,7 +1,7 @@
 function player_lowtime_loop_state(){
 	//enable_cancel_animation();
 	// sprite_index = s_lowtime_loop_chromatic_strip_rescaled7119;
-  show_debug_message("player_lowtime_loop_state");
+  // show_debug_message("player_lowtime_loop_state");
   var target_dir;
   if instance_exists(target)
     // target_dir = point_direction(o_Player.x, o_Player.y, target.x, target.y);
@@ -23,7 +23,7 @@ function player_lowtime_loop_state(){
 		enable_cancel_animation();
     if animation_hit_frame(4) or animation_hit_frame(6){
       // NOTE: temporary speed for this animation is 2, can change later
-      motion_add(target_dir, 2);
+      motion_add(target_dir, 4);
 			create_hitbox(x,y,self,sprite_index,knockback,"hightime_loop",lifespan,damage,image_xscale, image_angle, direction);
 			audio_play_sound(mixkit_dagger_woosh_1487, 1, false);
 		}

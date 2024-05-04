@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function get_input_states(obj_target, _angle, _dir){
 		if input.jump {
-      if can_jump {
+      // if can_jump {
         if lock_mode {
           //if (obj_target > x) hspeed = 0.1; else hspeed = -0.1;
           if (obj_target > x) image_xscale = 1 else image_xscale = -1;
@@ -18,7 +18,7 @@ function get_input_states(obj_target, _angle, _dir){
         vspeed = jump * jump_mod;
         _input = "SPACE";
         state = "jump";
-      }
+      // }
     }
 	
 		if input.right {
@@ -133,7 +133,7 @@ function get_input_states(obj_target, _angle, _dir){
 		if input.dash {
       if dash_counter >= 1 { 
         if input.right image_xscale = 1;
-        if input.left image_xscale = -1;
+       if input.left image_xscale = -1;
         image_index = 0;
         _input = "SHIFT";
         state = "dash";

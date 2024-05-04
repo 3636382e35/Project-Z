@@ -20,7 +20,7 @@ function player_sword_throw_state(_target, _angle, xdir){
 				var _dir = point_direction(x, y, _target.x, _target.y);
 			}
 			var inst = instance_create_layer(x,y-15, "Instances", o_spinning_sword_throw);
-			audio_play_sound(judgement_cut_sfx_cutted, 1, false);
+			// audio_play_sound(judgement_cut_sfx_cutted, 1, false);
 			with(inst){
 				speed = 50;
 				direction = _dir;

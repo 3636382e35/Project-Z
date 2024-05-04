@@ -7,9 +7,9 @@ ctrl = instance_create_layer(0,0,layer, oController);
 SLOW_MODE = false; 
 HP_ENABLED = true;
 FULL_SCREEN_MODE = false;
-GORE_MODE = true;
+GORE_MODE = false;
 DEBUG_MODE = false; 
-EXP_PARTICLE_MODE = true;
+EXP_PARTICLE_MODE = false;
 ANNOUNCER_MODE = false; 
 CONTRAST_HIT_MODE = false;
 ZOOM_LEVEL = ctrl.ZOOM_LEVEL;
@@ -19,6 +19,9 @@ selected_charge_out = 0;
 
 jce_dmg = 0;
 jce_range = 500;
+
+dash_counter = 3;
+max_dash_counter = 3;
 
 s_idle = s_idle_v2_Sheet__chromatic_with_outline_strip24;//
 s_run = s_running_v2_Sheet_with_outline_strip4;//
@@ -65,9 +68,9 @@ jump = -10;
 
 dash_counter = 3;
 
-can_jump = true;
-jump_timer = 0;
-jump_delay = 30;
+// can_jump = true;
+// jump_timer = 0;
+// jump_delay = 30;
 
 jump_mod = 2; //default is 1.6
 grv = 0.3; // //default is 0.2
