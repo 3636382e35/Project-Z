@@ -5,6 +5,7 @@ function get_input(){
 
 	lock_mode = keyboard_check_pressed(vk_tab);
 
+ // debugging 
 	addEnemyDeath = keyboard_check_pressed(ord("2"));
 	addEnemyKnight = keyboard_check_pressed(ord("1"));
 	_del = keyboard_check_pressed(vk_f2);
@@ -16,7 +17,6 @@ function get_input(){
 	parry = keyboard_check_pressed(ord("H"));
 	hold_w = keyboard_check(ord("W"));
 	hold_s = keyboard_check(ord("S"));
-
 
 	high_attk = keyboard_check_pressed(ord("F"));
 	sword_throw = keyboard_check_pressed(ord("C"));
