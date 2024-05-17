@@ -13,5 +13,11 @@ draw_max_hp = o_Player.hp;
 draw_dash_counter = 0;
 draw_max_dash_counter = o_Player.dash_counter;
 
+draw_combo_counter = 0;
+// draw_max_combo_counter = o_Player.combo_counter;
+draw_max_combo_counter = o_Player.combo_counter;
+
+draw_consec_kills_timer = o_Player.timer;
+draw_consec_kills_max_timer = o_Player.timer_max;
 
 draw_set_font(f_one);

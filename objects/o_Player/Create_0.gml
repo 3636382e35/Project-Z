@@ -14,6 +14,7 @@ ANNOUNCER_MODE = false;
 CONTRAST_HIT_MODE = false;
 ZOOM_LEVEL = ctrl.ZOOM_LEVEL;
 VOLUME = 0;
+enable_grapple = false;
 charge_pressed = 0;
 selected_charge_out = 0;
 
@@ -22,6 +23,9 @@ jce_range = 500;
 
 dash_counter = 3;
 max_dash_counter = 3;
+
+combo_counter = 0;
+max_combo_counter = 100;
 
 s_idle = s_idle_v2_Sheet__chromatic_with_outline_strip24;//
 s_run = s_running_v2_Sheet_with_outline_strip4;//
@@ -52,7 +56,7 @@ aim_dir = 0;
 projectile_dist = 300;
 fire_rate = 5;
 can_fire = true;
-projectile_speed = 80;
+projectile_speed = 80; //80
 
 lock_mode = false;
 obj_target = noone;
@@ -66,7 +70,6 @@ move_speed = 0;
 grounded = 0;
 jump = -10;
 
-dash_counter = 3;
 
 // can_jump = true;
 // jump_timer = 0;
@@ -90,9 +93,9 @@ _id = self;
 _input = "";
 
 // Variables for combo timer
-timer_max = 360;
+timer = 360;
+timer_max = timer;
 comboMeter = 0;
-timer = timer_max;
 consecutiveKills = 0;
 firstBloodPlayed = false;
 

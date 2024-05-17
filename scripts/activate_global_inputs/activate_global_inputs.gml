@@ -1,5 +1,14 @@
 function activate_global_inputs(){
 
+  if input.grapple {
+    enable_grapple = true;
+  }
+  
+  if keyboard_check_released(ord("I")){
+    enable_grapple = false;
+    speed = 5;
+  }
+
 	if input._debug_mode {
 		DEBUG_MODE = !DEBUG_MODE;
 	}

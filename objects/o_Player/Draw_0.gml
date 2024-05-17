@@ -6,7 +6,22 @@ if o_Player.DEBUG_MODE {
 		draw_set_alpha(1);
 		draw_circle(x, y, jce_range, true)
 	}
+
+  if state = "lowtime_loop" {
+    if instance_exists(target) {
+      draw_line(x, y, target.x, target.y-23);
+    }  
+  }
 }
+
+if enable_grapple {
+  if instance_exists(target) {
+   draw_line(x, y, target.x, target.y-23); 
+  } else {
+    draw_line(x, y, mouse_x, mouse_y);
+  }
+}
+
 
 // if sprite_index == s_parry {
 // 	draw_text(x, y-50 , string(image_index));

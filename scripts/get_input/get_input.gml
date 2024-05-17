@@ -2,7 +2,6 @@ function get_input(){
 
 	// NOTE: USE https://cherrytree.at/misc/vk.htm for other keys
 
-
 	lock_mode = keyboard_check_pressed(vk_tab);
 
  // debugging 
@@ -30,7 +29,7 @@ function get_input(){
 	_debug_mode = keyboard_check_pressed(vk_f4);
 
 	attk = mouse_check_button_pressed(mb_left); 
-	grapple = mouse_check_button_pressed(mb_right);
+	grapple = keyboard_check_pressed(ord("I"));
 
 	right_click = mouse_check_button_pressed(mb_right);
 	K = keyboard_check_pressed(ord("K"));

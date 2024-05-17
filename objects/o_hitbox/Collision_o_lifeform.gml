@@ -1,4 +1,5 @@
 if (creator == noone || creator.type == other.type || (creator == other && creator.id == other.id) || ds_list_find_index(hit_objects, other) != -1) exit;
+
 	var offset = 50;
 	var is_SLOW_MODE = o_Player.SLOW_MODE ? 0.1 : 1;
 
@@ -11,6 +12,7 @@ if (creator == noone || creator.type == other.type || (creator == other && creat
 
 	if hitbox_id == "Spinning Sword" {
 		other.speed = 0;
+    o_Player.combo_counter += 0.2;
 		sword_throw_hit = instance_create_layer(x, y-23, layer+1, o_player_sword_melee_hit);
 		sword_throw_hit.sprite_index = s_hit_vfx_with_red_outline_Sheet_strip6;
 		sword_throw_hit.image_speed = is_SLOW_MODE;
@@ -23,6 +25,7 @@ if (creator == noone || creator.type == other.type || (creator == other && creat
 
 	if hitbox_id == "hightime"{
 		other.speed = 0;
+    o_Player.combo_counter+=1;
 		hightime_hit = instance_create_layer(x, y-23, layer+1, o_player_sword_melee_hit);
 		hightime_hit.image_speed = is_SLOW_MODE;
 		hightime_hit.x = other.x+(offset * -creator.image_xscale);
@@ -30,11 +33,12 @@ if (creator == noone || creator.type == other.type || (creator == other && creat
 		hightime_hit.image_angle = other.image_xscale < 0 ? 45 : -240;
 		hightime_hit.image_index = 0;
 		hightime_hit.depth = other.depth - 1;
-		other.vspeed = other.jump + 2; //TODO: need not to double the execute of this code
+		other.vspeed = other.jump + 5; 
 	}
 
 	if hitbox_id == "judgement_cut"{
 		other.speed = 0;
+    o_Player.combo_counter+=4;
 		judgement_cut_hit = instance_create_layer(x, y-23, layer+1, o_player_sword_melee_hit);
 		judgement_cut_hit.sprite_index = s_hit_vfx_with_red_outline_Sheet_strip6;
 		judgement_cut_hit.image_speed = is_SLOW_MODE;
@@ -57,6 +61,7 @@ if (creator == noone || creator.type == other.type || (creator == other && creat
 
 	if hitbox_id == "hightime_loop"{
 		other.speed = 0;
+    o_Player.combo_counter+=0.2;
 		hightime_loop = instance_create_layer(x, y-23, layer+1, o_player_sword_melee_hit);
 		hightime_loop.image_speed = is_SLOW_MODE;
 		hightime_loop.x = other.x+(offset * -creator.image_xscale);
@@ -69,6 +74,7 @@ if (creator == noone || creator.type == other.type || (creator == other && creat
 
 	if hitbox_id == "lowtime"{
 		other.speed = 0;
+    o_Player.combo_counter+=1;
 		lowtime_hit = instance_create_layer(x, y-23, layer+1, o_player_sword_melee_hit);
 		lowtime_hit.image_speed = is_SLOW_MODE;
 		lowtime_hit.x = other.x+((offset-30) * -creator.image_xscale);
@@ -84,6 +90,7 @@ if (creator == noone || creator.type == other.type || (creator == other && creat
 
 	if hitbox_id == "attk2"{
 		other.speed = 0;
+    o_Player.combo_counter+=1;
 		attk2_hit = instance_create_layer(x, y-23, layer+1, o_player_sword_melee_hit);
 		attk2_hit.image_speed = is_SLOW_MODE;
 		attk2_hit.x = other.x+((offset-30) * -creator.image_xscale);
@@ -95,6 +102,7 @@ if (creator == noone || creator.type == other.type || (creator == other && creat
 
 	if hitbox_id == "attk1" or hitbox_id == "attk3"{
 		other.speed = 0;
+    o_Player.combo_counter+=1;
 		attack1_hit = instance_create_layer(x, y-23, layer+1, o_player_sword_melee_hit);
 		attack1_hit.image_speed = is_SLOW_MODE;
 		attack1_hit.x = other.x+(offset * -creator.image_xscale);
@@ -122,7 +130,7 @@ if (creator == noone || creator.type == other.type || (creator == other && creat
 				show_debug_message("mob attack prefectly parried");
 		} else {
 			with(o_Player){
-				//TODO: add another parry sound for non-perfect parry
+				// TODO: add another parry sound for non-perfect parry
 				randomize();
 				// audio_play_sound(choose(_1,_2,_3,_4,_5,_6,_7,_8,_9,_10,_11,_12), 1, false);
 				audio_play_sound(_10, 1, false);
@@ -172,7 +180,7 @@ if (creator == noone || creator.type == other.type || (creator == other && creat
 
 if instance_exists(oCamera) oCamera._xyshake = true;
 
-//TODO: uncomment this shit to add damage text
+// TODO: uncomment this shit to add damage text
 // dmg_text = instance_create_layer(other.x, other.y-50, layer, o_dmg_text);
 // with(dmg_text){
 // 	x = other.x + (23 * other.image_xscale);
@@ -196,7 +204,7 @@ if instance_exists(o_Player) and creator.object_index == o_Player and other.hp <
 		}
 	}
 
-	o_Player.kills += 1;
+	  o_Player.kills += 1;
     o_Player.consecutiveKills += 1;
 
     if o_Player.ANNOUNCER_MODE {

@@ -4,7 +4,7 @@ with(instance_create_depth(x, y, depth+1, o_eye_trail)){
 	sprite_index = other.sprite_index;
 	image_xscale = other.image_xscale;
 	image_blend = c_purple;
-	image_alpha = 0.01;
+	image_alpha = 0.50;
 	direction = other.direction;
 	image_angle = other.image_angle;
 }
@@ -14,7 +14,7 @@ if _dist > range {
 	projectile_die();
 }
 
-if place_meeting(x, y, o_knight) or place_meeting(x,y, o_death_mob){
+if place_meeting(x, y-1, o_knight) or place_meeting(x,y-23, o_death_mob){
 	create_hitbox(x,y, o_Player.id, projectile_mockup2, 1, "SummonSwords",2, 2, image_xscale, image_angle, direction);
 	summoon_sword_hit = instance_create_layer(x, y, layer+1, o_player_sword_melee_hit);
 	summoon_sword_hit.sprite_index = s_hit_vfx_with_red_outline_Sheet_strip6;

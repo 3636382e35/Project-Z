@@ -1,6 +1,18 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function get_input_states(obj_target, _angle, _dir){
+
+    // var grapple_dir;
+    // if instance_exists(obj_target) {
+    //   grapple_dir = point_direction(x, y, obj_target.x, obj_target.y); 
+    // } else {
+    //   grapple_dir = point_direction(x, y, mouse_x, mouse_y);
+    // }
+
+    // if enable_grapple {
+    //   motion_add(grapple_dir, 4);
+    // } 
+
 		if input.jump {
       // if can_jump {
         if lock_mode {
@@ -8,11 +20,11 @@ function get_input_states(obj_target, _angle, _dir){
           if (obj_target > x) image_xscale = 1 else image_xscale = -1;
         }
         if on_air {
-              magic_circle_jump_instance = instance_create_layer(x, y, layer, o_magic_circle_jump)
-              magic_circle_jump_instance.x = x;
-                  magic_circle_jump_instance.y = y;
-                  magic_circle_jump_instance.image_speed = 1;
-              magic_circle_jump_instance.depth = depth - 1;
+          magic_circle_jump_instance = instance_create_layer(x, y, layer, o_magic_circle_jump)
+          magic_circle_jump_instance.x = x;
+          magic_circle_jump_instance.y = y;
+          magic_circle_jump_instance.image_speed = 1;
+          magic_circle_jump_instance.depth = depth - 1;
         }
         vspeed = 0;
         vspeed = jump * jump_mod;

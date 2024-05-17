@@ -2,9 +2,9 @@ if not instance_exists(o_Player) exit;
 
 var hp_x = 8;
 var hp_y = 340;
-
 var hp_width = 198;
 var hp_height = 6;
+
 if instance_exists(o_Player){
 	draw_hp = lerp(draw_hp, o_Player.hp, 0.1);
 	draw_max_hp = o_Player.max_hp;
@@ -19,6 +19,7 @@ draw_rectangle_color(hp_x, hp_y, hp_x + (hp_width * hp_percent), hp_y + hp_heigh
 draw_rectangle_color(hp_x, hp_y, hp_x + hp_width, hp_y + hp_height, c_dkgray, c_dkgray, c_dkgray, c_dkgray, true);
 
 var dash_counter_x = 8;
+var consec_kills = o_Player.consecutiveKills;
 var dash_counter_y = 350;
 var dash_counter_width = 150;
 var dash_counter_height = 2;
@@ -33,11 +34,53 @@ if instance_exists(o_Player){
 
 var dash_counter_percent = draw_dash_counter / draw_max_dash_counter;
 
-  draw_rectangle_color(dash_counter_x, dash_counter_y, dash_counter_x + (dash_counter_width * dash_counter_percent), dash_counter_y + dash_counter_height,c_white, c_white, c_white, c_white, false);
+draw_rectangle_color(dash_counter_x, dash_counter_y, dash_counter_x + dash_counter_width, dash_counter_y + dash_counter_height, c_gray, c_gray, c_gray, c_gray, false);
+draw_rectangle_color(dash_counter_x, dash_counter_y, dash_counter_x + (dash_counter_width * dash_counter_percent), dash_counter_y + dash_counter_height,c_white, c_white, c_white, c_white, false);
 draw_rectangle_color(dash_counter_x, dash_counter_y, dash_counter_x + dash_counter_width, dash_counter_y + dash_counter_height, c_dkgray, c_dkgray, c_dkgray, c_dkgray, true);
 
 draw_text(hp_x+200, hp_y-3, string(o_Player.hp));
 draw_text(dash_counter_x+158, dash_counter_y-3, string(o_Player.dash_counter));
+
+
+var consec_kills_x = dash_counter_x+350;
+var consec_kills_y = dash_counter_y-250;
+var consec_kills_width = 100;
+var consec_kills_height = 2;
+
+if o_Player.consecutiveKills > 0 and o_Player.timer != 0 {
+  if instance_exists(o_Player){
+    draw_consec_kills_timer = approach(draw_consec_kills_timer, o_Player.timer, o_Player.timer); 
+    draw_consec_kills_max_timer = o_Player.timer_max;
+  } else {
+    draw_consec_kills_timer = approach(draw_consec_kills_timer, 0, 1);
+    // draw_consec_kills_timer_percent = o_Player.timer_max;
+    draw_consec_kills_timer_percent = draw_consec_kills_timer; 
+  }
+
+  var draw_consec_kills_timer_percent = draw_consec_kills_timer / draw_consec_kills_max_timer;
+  draw_text(consec_kills_x, consec_kills_y+5, string(o_Player.consecutiveKills) + " Consecutive kills!");
+  draw_rectangle_color(consec_kills_x, consec_kills_y+5, consec_kills_x + (consec_kills_width * draw_consec_kills_timer_percent), consec_kills_y + consec_kills_height,c_white, c_white, c_white, c_white, false);
+  draw_rectangle_color(consec_kills_x, consec_kills_y+5, consec_kills_x + consec_kills_width, consec_kills_y + consec_kills_height, c_black, c_black, c_black, c_black, true);
+}
+
+//combo counter hud
+var combo_counter_x = 32;
+var combo_counter_y = -360;
+var combo_counter_width = 100;
+var combo_counter_height = 2;
+
+if instance_exists(o_Player){
+  draw_combo_counter = approach(draw_combo_counter, o_Player.combo_counter, 0.1); 
+  draw_max_combo_counter = o_Player.max_combo_counter;
+} else {
+  draw_combo_counter = approach(draw_combo_counter, 0, 0.2);
+  combo_counter_percent = draw_combo_counter;
+}
+
+var combo_counter_percent = draw_combo_counter / draw_max_combo_counter;
+draw_rectangle_color(combo_counter_x, combo_counter_y, combo_counter_x + combo_counter_width, combo_counter_y + combo_counter_height, c_white, c_white, c_white, c_white, false);
+// draw_text(combo_counter_x, combo_counter_y, string(o_Player.combo_counter));
+draw_text(dash_counter_x+200, dash_counter_y-3, string(o_Player.combo_counter)+" / "+""+string(o_Player.max_combo_counter));
 
 // if o_Player.DEBUG_MODE {
 	var text = "Kills: " + string(o_Player.kills);
